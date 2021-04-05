@@ -1,0 +1,200 @@
+/* index css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+/* phần trên cùng của web */
+
+.top-nab {
+    background-color: #CD2122;
+    height: 5vh;
+    display: flex;
+}
+
+
+/* đăng kí và đăng nhập */
+
+.dangki-dangnhap {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    float: right;
+    padding: 10px 10px;
+    color: #000;
+}
+
+.dangki-dangnhap:hover {
+    color: #fff;
+}
+
+
+/* logo và 1 số thứ khác */
+
+.main-nab {
+    background-color: #F9FADC;
+}
+
+
+/* logo */
+
+.logo {
+    height: 10vh;
+}
+
+
+/* thông báo và thông tin cá nhân */
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 10vh;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    border: none;
+}
+
+.dropdown-content {
+    right: 0;
+}
+
+
+/* phần chính */
+
+.main {
+    display: flex;
+}
+
+
+/* danh sách lớp học */
+
+.tab {
+    width: 12.5vw;
+    overflow: auto;
+    max-height: 80vh;
+}
+
+.tab-link {
+    color: #aaa;
+    background: #fff;
+    position: relative;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    color: #00ff00;
+    margin-top: 10px;
+    padding: 15px 10px;
+}
+
+.tab-link:hover {
+    background: #CD2122;
+    color: #fff;
+}
+
+
+/* phần nội dung */
+
+.content {
+    background-color: #F9FADC;
+    border: 1px black solid;
+    width: 60vw;
+}
+
+
+/* slideshow */
+
+.slideshow {
+    width: 100%;
+    background-color: #f0f8ff;
+}
+
+.news {
+    background-color: #a52a2a;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 69vh;
+}
+
+.news-item {
+    width: 300px;
+    height: 30vh;
+    background-color: #6495ed;
+    margin: 1vw;
+}
+
+.more {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    float: right;
+    padding: 10px 10px;
+    color: #000;
+    background-color: #a52a2a;
+}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 450px) {}
+
+
+/* ??? */
