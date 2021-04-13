@@ -17,157 +17,38 @@
 </head>
 
 <body>
+    <!-- nabbar -->
     <div class="top-nab">
         <div class="container">
-            <a href="./register.html">
-                <div class="dangki-dangnhap">
-                    đăng kí
+            <div class="row">
+                <!-- bắt đầu nội dung của nabbar -->
+                <!-- logo, home, ... -->
+                <div class="col-md-9">
+                    <a href="./index.html">
+                        <img src="../resource/image/logo.png" alt="" class="logo">
+                    </a>
+
+                    <a href="./index.html">
+                        <div>
+                            Trang chủ
+                        </div>
+                    </a>
                 </div>
-            </a>
-
-            <a href="./login.html">
-                <div class="dangki-dangnhap">
-                    đăng nhập
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="main-nab">
-        <div class="container">
-
-            <a href="./index.html">
-                <img src="../resource/image/logo.png" alt="" class="logo">
-            </a>
-
-            <div class="dropdown">
-                <button class="dropbtn"><i class="fas fa-bell"></i></button>
-                <div class="dropdown-content" id="thongbao">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn"><i class="fas fa-user-circle"></i></button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container main">
-
-        <div class="tab">
-
-            <a href="./index.html">
-                <div class="tab-link shadow">
-                    <i class="fas fa-home"></i>
-                    <p class="name">Home</p>
-                </div>
-            </a>
-
-            <a href="./class.html">
-                <div class="tab-link shadow">
-                    <i class="fas fa-pencil-alt"></i>
-                    <p class="name">Class</p>
-                </div>
-            </a>
-
-        </div>
-
-        <div class=" content">
-
-            <div class="slideshow">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <!-- thanh tìm kiếm, đăng kí đăng nhập -->
+                <div class="col-md-3">
+                    <div class="search-bar">
+                        <input type="text">
+                        <input type="button" value="">
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../resource/image/slide1.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../resource/image/slide2.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../resource/image/slide3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+                    <div>person</div>
                 </div>
+                <!-- kết thúc nội dung nabbar -->
             </div>
-
-            <div class="news" id="news">
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-                <div class="news-item">
-                    <img src="" alt="">
-                    <p class="tieude"></p>
-                    <p class="tomtat"></p>
-                </div>
-
-            </div>
-            <button class="more" id="more" onclick="hienthi()">Xem thêm >></button>
-
         </div>
-
     </div>
+    <!-- end nabbar -->
+
+
 
     <!-- JavaScript -->
     <script src="../js/index.js"></script>
