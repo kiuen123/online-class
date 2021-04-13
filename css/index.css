@@ -43,7 +43,10 @@ a {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.logo {}
+.logo {
+    padding: 5px 5px;
+    max-height: 66px;
+}
 
 .search-bar {
     display: flex;
