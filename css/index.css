@@ -76,3 +76,11 @@ a {
     border: none;
     width: 100%;
 }
+
+.slide-show {
+    padding-top: 10px;
+}
+
+.content {
+    padding-top: 10px;
+}
