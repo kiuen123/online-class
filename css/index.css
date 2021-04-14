@@ -24,7 +24,7 @@ a {
 /* nabbar */
 
 .top-nab {
-    background-color: #CD2122;
+    background-color: rgb(205, 33, 34);
     /* #CD2122 */
 }
 
@@ -77,8 +77,24 @@ a {
     width: 100%;
 }
 
+.search-bar-input:hover {
+    border: none;
+    width: 100%;
+}
+
 .slide-show {
     padding-top: 10px;
+}
+
+.slide-button {
+    height: 15vh;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(150%);
+}
+
+.slide-button:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .content {
