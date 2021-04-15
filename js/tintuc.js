@@ -141,7 +141,7 @@ for (let i = 0; i < danhsachtintuc.length; i++) {
 
     button = document.createElement("button")
     button.setAttribute("style", "float: right;")
-    button.textContent = "Xem thêm "
+    button.textContent = "Chi tiết "
     div9.appendChild(button)
 
     i3 = document.createElement("i")
