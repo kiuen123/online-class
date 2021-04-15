@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-color: #f9fadc !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+
+/* nabbar */
+
+.top-nab {
+    background-color: rgb(205, 33, 34);
+}
+
+.nab-item {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    padding: 21px 20px;
+}
+
+.nab-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    padding: 5px 5px;
+    max-height: 66px;
+}

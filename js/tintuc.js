@@ -140,7 +140,7 @@ for (let i = 0; i < danhsachtintuc.length; i++) {
     div5.appendChild(div9)
 
     button = document.createElement("button")
-    button.setAttribute("style", "float: right;")
+    button.setAttribute("style", "float: right; margin-right: 10px; background-color: #fff;")
     button.textContent = "Chi tiết "
     div9.appendChild(button)
 
