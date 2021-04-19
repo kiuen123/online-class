@@ -7,7 +7,7 @@
                 <div class="col-md-9" style="display: flex;">
                     <a href="./home.html">
                         <!-- <img src="../resource/image/test.png" alt="" class="logo"> -->
-                        <img src="../resource/image/logo.png" alt="" class="logo">
+                        <img src="./resource/image/logo.png" alt="" class="logo">
                     </a>
                     <div style="font-size: 16px;
                                 vertical-align: top;
