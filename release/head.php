@@ -9,12 +9,12 @@
     <meta name="description" content="miêu tả trang như muốn đấm vào mồm người xem">
     <meta name="author" content="Nguyễn Trung Kiên">
     <!-- css của tôi -->
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="./css/home.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../resource/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resource/bootstrap-5/css/bootstrap.min.css">
     <script src="../resource/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="../resource/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./resource/fontawesome/css/all.css">
 </head>
 
 <body>
