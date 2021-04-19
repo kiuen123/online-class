@@ -44,3 +44,51 @@ a {
     padding: 5px 5px;
     max-height: 66px;
 }
+
+.login {
+    background-color: aqua;
+    height: 93vh;
+}
+
+.register {
+    background-color: bisque;
+    height: 93vh;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.login-main {
+    transform: translateY(25%);
+    height: 50vh;
+    width: 90%;
+    border-radius: 15px !important;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.register-main {
+    transform: translateY(25%);
+    height: 50vh;
+    width: 90%;
+    border-radius: 15px !important;
+}
+
+tr td {
+    padding: 5px;
+    width: 50%;
+}
+
+.confirm {
+    width: 70%;
+    height: 2em;
+    border-radius: 10px;
+    border: 1px black solid;
+}
