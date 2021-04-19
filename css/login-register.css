@@ -46,12 +46,6 @@ a {
 }
 
 .login {
-    background-color: aqua;
-    height: 93vh;
-}
-
-.register {
-    background-color: bisque;
     height: 93vh;
 }
 
@@ -62,19 +56,6 @@ a {
 }
 
 .login-main {
-    transform: translateY(25%);
-    height: 50vh;
-    width: 90%;
-    border-radius: 15px !important;
-}
-
-.register {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.register-main {
     transform: translateY(25%);
     height: 50vh;
     width: 90%;
