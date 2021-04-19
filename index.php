@@ -9,12 +9,12 @@
     <meta name="description" content="miêu tả trang như muốn đấm vào mồm người xem">
     <meta name="author" content="Nguyễn Trung Kiên">
     <!-- css của tôi -->
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="./css/home.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../resource/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resource/bootstrap-5/css/bootstrap.min.css">
     <script src="../resource/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="../resource/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./resource/fontawesome/css/all.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                 <div class="col-md-9" style="display: flex;">
                     <a href="./home.html">
                         <!-- <img src="../resource/image/test.png" alt="" class="logo"> -->
-                        <img src="../resource/image/logo.png" alt="" class="logo">
+                        <img src="./resource/image/logo.png" alt="" class="logo">
                     </a>
                     <div style="font-size: 16px;
                                 vertical-align: top;
@@ -88,19 +88,19 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../resource/image/slide1.png" class="d-block w-100" alt="...">
+                                    <img src="./resource/image/slide1.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../resource/image/slide2.png" class="d-block w-100" alt="...">
+                                    <img src="./resource/image/slide2.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../resource/image/slide3.jpg" class="d-block w-100" alt="...">
+                                    <img src="./resource/image/slide3.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../resource/image/slide1.png" class="d-block w-100" alt="...">
+                                    <img src="./resource/image/slide1.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../resource/image/slide2.png" class="d-block w-100" alt="...">
+                                    <img src="./resource/image/slide2.png" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev slide-button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -150,9 +150,9 @@
                                             </p>
                                         </div>
                                         <div class="image-site">
-                                            <img class="card-img-top" src="../resource/image/slide1.png" alt="" style="max-width: 300px;">
-                                            <img class="card-img-top" src="../resource/image/slide1.png" alt="" style="max-width: 300px;">
-                                            <img class="card-img-top" src="../resource/image/slide1.png" alt="" style="max-width: 300px;">
+                                            <img class="card-img-top" src="./resource/image/slide1.png" alt="" style="max-width: 300px;">
+                                            <img class="card-img-top" src="./resource/image/slide1.png" alt="" style="max-width: 300px;">
+                                            <img class="card-img-top" src="./resource/image/slide1.png" alt="" style="max-width: 300px;">
                                         </div>
                                         <div class="row">
                                             <div class="col-md-10" style="display: flex;">
@@ -177,7 +177,7 @@
                                 </div>
 
                                 <!-- các tin tức khác -->
-                                <script src="../js/tintuc.js"></script>
+                                <script src="./js/tintuc.js"></script>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                                     </li>
 
                                     <!-- các tiêu điểm khác -->
-                                    <script src="../js/tieudiem.js"></script>
+                                    <script src="./js/tieudiem.js"></script>
                                 </ul>
 
                             </div>
