@@ -4,8 +4,8 @@ function roundToTwo(num) {
     return +(Math.round(num + "e+2") + "e-2");
 }
 
-console.log("Type: " + os.type());
-console.log("Platform: " + os.platform() + " " + os.arch() + "bit");
-console.log("Hostname: " + os.hostname());
-console.log("Core CPU: " + os.cpus().length);
-console.log("Memories: " + roundToTwo(os.totalmem() / 1024 / 1024 / 1024) + "gb");
+console.log("Hệ điều hành  : " + os.type());
+console.log("Nền tảng      : " + os.platform() + " " + os.arch() + " bit");
+console.log("Tên máy       : " + os.hostname());
+console.log("Số core CPU   : " + os.cpus().length);
+console.log("Dung lượng RAM: " + roundToTwo(os.totalmem() / 1024 / 1024 / 1024) + "gb");
