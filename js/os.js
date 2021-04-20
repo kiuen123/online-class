@@ -8,11 +8,11 @@ console.log("Hệ điều hành  : " + os.type());
 console.log("Nền tảng      : " + os.platform() + " " + os.arch() + " bit");
 console.log("Tên máy       : " + os.hostname());
 console.log("Số core CPU   : " + os.cpus().length);
-console.log("Dung lượng RAM: " + roundToTwo(os.totalmem() / 1024 / 1024 / 1024) + "gb");
+console.log("Dung lượng RAM: " + roundToTwo((os.totalmem() - os.freemem()) / 1024 / 1024 / 1024) + " / " + roundToTwo(os.totalmem() / 1024 / 1024 / 1024) + "gb");
 
-var fs = require('fs');
-var files = fs.readdirSync('./');
-console.log(files);
+// var fs = require('fs');
+// var files = fs.readdirSync('./');
+// console.log(files);
 
 // npm install -g node-modules
 // npm install jquery
