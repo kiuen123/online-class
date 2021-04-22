@@ -145,7 +145,7 @@
                             <div class="row" id="tintuc">
 
                                 <?php
-                                    $sql = "SELECT * FROM tintuc ";
+                                    $sql = "SELECT * FROM tintuc ORDER BY matintuc DESC LIMIT 10";
                                     mysqli_set_charset($connect, "UTF8");
                                     $result = mysqli_query($connect, $sql);
                                     while ($row = mysqli_fetch_assoc($result)) {
@@ -199,7 +199,7 @@
                                 <ul class="list-group list-group-flush" id="tieudiem">
                                     
                                     <?php
-                                        $sql = "SELECT * FROM tieudiem ";
+                                        $sql = "SELECT * FROM tieudiem ORDER BY matieudiem DESC LIMIT 10";
                                         mysqli_set_charset($connect, "UTF8");
                                         $result = mysqli_query($connect, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
