@@ -197,8 +197,9 @@
                             <div class="card">
 
                                 <ul class="list-group list-group-flush" id="tieudiem">
+                                    
                                     <?php
-                                        $sql = "SELECT * FROM tintuc ";
+                                        $sql = "SELECT * FROM tieudiem ";
                                         mysqli_set_charset($connect, "UTF8");
                                         $result = mysqli_query($connect, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -206,15 +207,15 @@
                                     <li class="list-group-item">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                25/4
+                                            <?php echo $row['ngay'] ?>/<?php echo $row['thang'] ?>
                                             </div>
                                             <div class="col-sm-9">
-                                                <h5>lần đầu có sự kiện</h5>
+                                                <h5><?php echo $row['ten'] ?></h5>
                                             </div>
                                         </div>
                                     </li>
                                     <?php } ?>
-                                    
+
                                 </ul>
 
                             </div>
