@@ -27,9 +27,9 @@
                 <!-- bắt đầu nội dung của nabbar -->
                 <!-- logo, home, ... -->
                 <div class="col-md-9" style="display: flex;">
-                    <a href="./home.html">
+                    <a href="./index.php">
                         <!-- <img src="../resource/image/test.png" alt="" class="logo"> -->
-                        <img src="../resource/image/logo.png" alt="" class="logo">
+                        <img src="./resource/image/logo.png" alt="" class="logo">
                     </a>
                     <div style="font-size: 16px;
                                 vertical-align: top;
@@ -38,7 +38,7 @@
                                 padding: 21px 20px;">
                         | Online class
                     </div>
-                    <a href="./home.html">
+                    <a href="./index.php">
                         <div class="nab-item">
                             Trang chủ
                         </div>
