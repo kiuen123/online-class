@@ -1,0 +1,1 @@
+INSERT INTO `tintuc`(`tieude`, `tomtat`, `anh1`, `anh2`, `anh3`, `luotxem`, `luotbinhluan`) VALUES ("test tiêu đề","test tóm tắt","./resource/image/slide1.png","./resource/image/slide1.png","./resource/image/slide1.png",1,2)

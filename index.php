@@ -129,6 +129,118 @@
         </div>
         <!-- end slide show -->
 
+        
+        <!-- nội dung chính -->
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <!-- bắt đầu nôi dung chính -->
+
+                    <!-- tin tức -->
+                    <div class="col-md-9">
+                        <h3 style=" background-color: rgb(205, 33, 34);
+                                    color:#FFF;
+                                    padding: 5px;">TIN TỨC</h3>
+                        <div class="tintuc">
+                            <div class="row" id="tintuc">
+
+                                <?php
+                                    $sql = "SELECT * FROM tintuc ";
+                                    mysqli_set_charset($connect, "UTF8");
+                                    $result = mysqli_query($connect, $sql);
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                        <div class="col-md-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><?php echo $row['tieude'] ?></h4>
+                                                    <p class="card-text"><?php echo $row['tomtat'] ?></p>
+                                                </div>
+                                                <div class="image-site">
+                                                    <img class="card-img-top" src="<?php echo $row['anh1'] ?>" alt="" style="max-width: 300px;">
+                                                    <img class="card-img-top" src="<?php echo $row['anh2'] ?>" alt="" style="max-width: 300px;">
+                                                    <img class="card-img-top" src="<?php echo $row['anh3'] ?>" alt="" style="max-width: 300px;">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-10" style="display: flex;">
+                                                        <div style="display: flex; padding-left: 10px;">
+                                                            <i class="fas fa-eye"></i>
+                                                            <p><?php echo $row['luotxem'] ?></p>
+                                                        </div>
+                                                        <div style="display: flex; padding-left: 10px;">
+                                                            <i class="fas fa-comment-dots"></i>
+                                                            <p><?php echo $row['luotbinhluan'] ?></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <button style=" float: right;
+                                                                        margin-right: 10px;
+                                                                        background-color: #fff;">
+                                                            Chi tiết <i class="fas fa-chevron-circle-right"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- tiêu điểm -->
+                    <div class="col-md-3">
+                        <h3 style=" background-color: rgb(205, 33, 34);
+                                    color: #fff;
+                                    padding: 5px;">TIÊU ĐIỂM NỔI BẬT</h3>
+                        <div class="tieudiem">
+                            <div class="card">
+
+                                <ul class="list-group list-group-flush" id="tieudiem">
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                25/4
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <h5>lần đầu có sự kiện</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- các tiêu điểm khác -->
+                                    <script src="./js/tieudiem.js"></script>
+                                </ul>
+
+                            </div>
+                            <button style=" float: right;
+                                            margin-right: 10px;
+                                            background-color: #f9fadc;">
+                                <i class="fas fa-chevron-circle-down"></i>
+                                Xem thêm
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- kết thúc nội dung chính -->
+                </div>
+            </div>
+        </div>
+        <!-- end nội dung chính -->
+
+        <!-- thông tin khác -->
+        <div class="thongtinkhac">
+            <div class="container">
+                <div class="row">
+                    <!-- các thông tin liêu quan ở trong này VD:fb, youtube,vv -->
+                    <!-- chưa biết thêm cái đéo j cả -->
+                </div>
+            </div>
+        </div>
+        <!-- end nội dung khác -->
+
         </body>
 
 </html>

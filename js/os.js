@@ -14,6 +14,5 @@ console.log("Dung lượng RAM: " + roundToTwo((os.totalmem() - os.freemem()) / 
 // var files = fs.readdirSync('./');
 // console.log(files);
 
-// npm install -g node-modules
 // npm install jquery
-// npm install npm -g
+// npm install express --save
