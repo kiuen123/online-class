@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/home.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./resource/bootstrap-5/css/bootstrap.min.css">
-    <script src="../resource/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="./resource/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <!-- Fontawesome -->
     <link rel="stylesheet" href="./resource/fontawesome/css/all.css">
 </head>
