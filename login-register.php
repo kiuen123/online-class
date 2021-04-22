@@ -100,7 +100,7 @@
 
                         <div style="display: flex;
                                     justify-content: center;">
-                            <img src="../resource/image/logo.png" alt="" width="50%">
+                            <img src="./resource/image/logo.png" alt="" width="50%">
                         </div>
                         <div style="display: flex;
                                     justify-content: center;">
