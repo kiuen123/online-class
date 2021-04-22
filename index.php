@@ -27,7 +27,6 @@
                 <!-- logo, home, ... -->
                 <div class="col-md-9" style="display: flex;">
                     <a href="./index.php">
-                        <!-- <img src="../resource/image/test.png" alt="" class="logo"> -->
                         <img src="./resource/image/logo.png" alt="" class="logo">
                     </a>
                     <div style="font-size: 16px;
@@ -240,7 +239,6 @@
             <div class="container">
                 <div class="row">
                     <!-- các thông tin liêu quan ở trong này VD:fb, youtube,vv -->
-                    <!-- chưa biết thêm cái đéo j cả -->
                 </div>
             </div>
         </div>
