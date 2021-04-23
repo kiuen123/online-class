@@ -181,7 +181,7 @@
                                 {
                                     $query = "INSERT INTO users(id,pass,email) VALUES ('$iddk','$passdk','$emaildk')";
                                     mysqli_set_charset($connect,"UTF8");
-                                    mysqli_query($connect,$query)
+                                    mysqli_query($connect,$query);
                                     header('Location: ./index.php');
                                 }
                                 
