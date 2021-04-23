@@ -1,3 +1,5 @@
+<?php include ("./admin/connect.php"); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <head>
@@ -57,15 +59,14 @@
                                     justify-content: center;">
                             <h3>Đăng nhập</h3>
                         </div>
-                        <form action="" style=" display: flex;
-                                                justify-content: center;">
+                        <form method="post" action="" style="   display: flex; justify-content: center;">
                             <table>
                                 <tr>
                                     <td>
                                         <p>Tên đăng nhập</p>
                                     </td>
                                     <td>
-                                        <input type="text" name="" id="" style="border:1px black solid;">
+                                        <input type="text" name="id" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -73,12 +74,12 @@
                                         <p>Mật khẩu</p>
                                     </td>
                                     <td>
-                                        <input type="password" name="" id="" style="border:1px black solid;">
+                                        <input type="password" name="pass" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <button class="confirm">
+                                        <button class="confirm" type="submit" name="submit">
                                             Đăng nhập
                                         </button>
                                     </td>
@@ -86,6 +87,30 @@
                             </table>
 
                         </form>
+
+                        <?php
+                            if (isset($_POST["submit"])) 
+                            {
+                                $id = $_POST["id"];
+                                $pass = $_POST["pass"];
+                                $query = "SELECT * FROM users WHERE id='$id'";
+                                $result = mysqli_query($connect, $query);
+
+                                if (mysqli_num_rows($result) > 0) 
+                                {
+                                    $row = mysqli_fetch_assoc($result);
+                                    if ($pass, $row['pass']) 
+                                    {
+                                        header('Location: ./home.php');
+                                    } 
+                                    else 
+                                    {
+                                        echo 'done';
+                                    }
+                                }
+                            }
+                        ?>
+
                     </div>
                 </div>
 
