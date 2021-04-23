@@ -25,7 +25,7 @@
                 <!-- bắt đầu nội dung của nabbar -->
                 <!-- logo, home, ... -->
                 <div class="col-md-9" style="display: flex;">
-                    <a href="./home.html">
+                    <a href="./home.php">
                         <img src="./resource/image/logo.png" alt="" class="logo">
                     </a>
                     <div style="font-size: 16px;
@@ -35,7 +35,7 @@
                                 padding: 21px 20px;">
                         | Online class
                     </div>
-                    <a href="./index.php">
+                    <a href="./home.php">
                         <div class="nab-item">
                             Trang chủ
                         </div>
@@ -54,7 +54,7 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <a href="./login-register.php" style="color: #fff !important;">
+                    <a href="#" style="color: #fff !important;">
                         <div class="nab-item" style="border-radius: 50%; 
                                                 width: 66px;">
                             <i class="fas fa-user"></i>
