@@ -176,11 +176,12 @@
                                 $iddk = $_POST["iddk"];
                                 $emaildk = $_POST["emaildk"];
                                 $passdk = $_POST["passdk"];
-                                $passcf = $_POST["cfgass"];
+                                $passcf = $_POST["cfpass"];
                                 if($passcf = $passdk)
                                 {
-                                    $query = "INSERT INTO usersVALUES ('$iddk','$passdk','$emaildk')";
-                                    $result = mysqli_query($connect, $query);
+                                    $query = "INSERT INTO users(id,pass,email) VALUES ('$iddk','$passdk','$emaildk')";
+                                    mysqli_set_charset($connect,"UTF8");
+                                    mysqli_query($connect,$query)
                                     header('Location: ./index.php');
                                 }
                                 
