@@ -125,15 +125,14 @@
                                     justify-content: center;">
                             <h3>Đăng kí</h3>
                         </div>
-                        <form action="" style=" display: flex;
-                                                justify-content: center;">
+                        <form method="post" action="" style=" display: flex; justify-content: center;">
                             <table>
                                 <tr>
                                     <td>
                                         <p>Tên đăng nhập</p>
                                     </td>
                                     <td>
-                                        <input type="text" name="" id="" style="border:1px black solid;">
+                                        <input type="text" name="iddk" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -141,7 +140,7 @@
                                         <p>Email</p>
                                     </td>
                                     <td>
-                                        <input type="email" name="" id="" style="border:1px black solid;">
+                                        <input type="email" name="emaildk" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -149,7 +148,7 @@
                                         <p>Mật khẩu</p>
                                     </td>
                                     <td>
-                                        <input type="password" name="" id="" style="border:1px black solid;">
+                                        <input type="password" name="passdk" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -157,12 +156,12 @@
                                         <p>Xác nhận mật khẩu</p>
                                     </td>
                                     <td>
-                                        <input type="password" name="" id="" style="border:1px black solid;">
+                                        <input type="password" name="cfpass" id="" style="border:1px black solid;">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <button class="confirm">
+                                        <button class="confirm"  type="submit" name="submit">
                                             Đăng kí
                                         </button>
                                     </td>
@@ -170,6 +169,24 @@
                             </table>
 
                         </form>
+
+                        <?php
+                            if (isset($_POST["submit"])) 
+                            {
+                                $iddk = $_POST["iddk"];
+                                $emaildk = $_POST["emaildk"];
+                                $passdk = $_POST["passdk"];
+                                $passcf = $_POST["cfgass"];
+                                if($passcf = $passdk)
+                                {
+                                    $query = "INSERT INTO usersVALUES ('$iddk','$passdk','$emaildk')";
+                                    $result = mysqli_query($connect, $query);
+                                    header('Location: ./index.php');
+                                }
+                                
+                            }
+                        ?>
+
                     </div>
 
                 </div>
