@@ -7,10 +7,9 @@
   ></mat-icon>
 </header>
 
-<mat-drawer-container class="example-container" [hasBackdrop]="false">
-  <mat-drawer #drawer mode="side" opened>I'm a drawer</mat-drawer>
-  <mat-drawer-content>
-    a
+<mat-drawer-container [hasBackdrop]="false">
+  <mat-drawer #drawer mode="side" opened class="side">I'm a drawer</mat-drawer>
+  <mat-drawer-content class="content">
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
