@@ -1,0 +1,39 @@
+<mat-progress-bar mode="indeterminate" [class]="bar"></mat-progress-bar>
+<mat-spinner class="hide"></mat-spinner>
+<form name="form" #f="ngForm">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>username</mat-label>
+    <input
+      matInput
+      placeholder="User name"
+      name="username"
+      [(ngModel)]="model.username"
+      #username="ngModel"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>password</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      name="password"
+      #password="ngModel"
+      placeholder="password"
+      [(ngModel)]="model.password"
+      required
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button class="submit" color="primary" (click)="login()">
+    Login
+  </button>
+</form>
