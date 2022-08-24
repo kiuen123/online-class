@@ -213,3 +213,4 @@ SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
 SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 update users set email = 'string', ten = N'string', anh_dai_dien = 'string', tom_tat = N'string' where id = 0
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
