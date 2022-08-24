@@ -84,5 +84,28 @@ namespace webAPI.Controllers
             }
             return new JsonResult(table);
         }
+
+        [HttpPatch("EditUserbyId")]
+        public JsonResult EditUserbyId(EditUser user)
+        {
+            string query = "update users set email = '"+user.email+"', ten = N'"+user.ten+"', anh_dai_dien = '"+user.anh_dai_dien+"', tom_tat = N'"+user.tom_tat+"' where id = "+user.id+"";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
     }
 }
