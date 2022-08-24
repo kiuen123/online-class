@@ -19,12 +19,12 @@ export class LoginComponent implements OnInit {
       ten_dang_nhap: this.model.username,
       mat_khau: this.model.password,
     };
-    console.log(data);
     this.UserApiService.checkLogin(data).subscribe(() => {
       this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
       if (this.user.length == 0) {
-        console.log(this.user);
+        // không đăng nhập được
       } else {
+        // đăng nhạp thành công
         this.router.navigate(['/main']);
       }
     });

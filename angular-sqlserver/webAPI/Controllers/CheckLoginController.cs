@@ -24,7 +24,8 @@ namespace webAPI.Controllers
             if (username == null || password == null)
                 return new JsonResult("");
             string query = "select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = '" + username + "' and mat_khau = '" + password + "'";
-            
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;

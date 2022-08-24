@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "WebAdminVS", "WebAdminVS.esproj", "{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D322EF8-6EEE-4D02-899A-AF8B0F612A0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01C89AB6-6FBD-4936-9A50-6751FC1B4EC1}
+	EndGlobalSection
+EndGlobal

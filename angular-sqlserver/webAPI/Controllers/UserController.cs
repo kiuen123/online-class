@@ -20,6 +20,8 @@ namespace webAPI.Controllers
         public JsonResult GetAllUser()
         {
             string query = "select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;
@@ -41,6 +43,8 @@ namespace webAPI.Controllers
         public JsonResult GetUserbyId(int id)
         {
             string query = "select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id = " + id;
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;

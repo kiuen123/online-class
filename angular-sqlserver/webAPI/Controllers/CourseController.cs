@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using webAPI.Model;
 
 namespace webAPI.Controllers
 {
@@ -19,6 +20,8 @@ namespace webAPI.Controllers
         public JsonResult GetAllUser()
         {
             string query = "select id,ten_lop,ngay_bat_dau,ngay_ket_thuc,link_online from course";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;
@@ -40,6 +43,8 @@ namespace webAPI.Controllers
         public JsonResult GetUserbyId(int id)
         {
             string query = "select id,ten_lop,ngay_bat_dau,ngay_ket_thuc,link_online from course where id = " + id;
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;

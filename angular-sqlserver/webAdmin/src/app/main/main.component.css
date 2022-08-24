@@ -4,16 +4,19 @@ mat-drawer-content {
   align-items: flex-start;
 }
 header {
-  height: 5vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   padding: 1rem;
+  justify-content: space-between;
 }
 .side {
-  width: 200px;
+  width: 250px;
   padding: 1rem;
+  overflow-y: auto;
 }
 .content {
-  height: 95vh;
+  height: 90vh;
   padding: 1rem;
+  overflow-y: auto;
 }

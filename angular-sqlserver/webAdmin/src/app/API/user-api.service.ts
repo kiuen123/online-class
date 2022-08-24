@@ -22,7 +22,6 @@ export class UserApiService {
       .pipe(
         map((res: any) => {
           sessionStorage.setItem('user', JSON.stringify(res));
-          console.log(sessionStorage.getItem('user'));
           return res;
         }),
         catchError((err) => {

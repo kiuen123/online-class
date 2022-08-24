@@ -5,10 +5,21 @@
     mat-raised-button
     (click)="drawer.toggle()"
   ></mat-icon>
+  <button mat-button [matMenuTriggerFor]="menu">
+    Xin chào {{ user[0].ten }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon class="mr">login</mat-icon>
+      Đăng xuất
+    </button>
+  </mat-menu>
 </header>
 
 <mat-drawer-container [hasBackdrop]="false">
-  <mat-drawer #drawer mode="side" opened class="side">I'm a drawer</mat-drawer>
+  <mat-drawer #drawer mode="side" opened class="side">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
   <mat-drawer-content class="content">
     <router-outlet></router-outlet>
   </mat-drawer-content>

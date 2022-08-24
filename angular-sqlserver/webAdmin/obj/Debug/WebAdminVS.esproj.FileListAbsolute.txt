@@ -1,0 +1,2 @@
+D:\project\online-class\angular-sqlserver\WebAdminVS\obj\Debug\WebAdminVS.esproj.SuggestedBindingRedirects.cache
+D:\project\online-class\angular-sqlserver\WebAdminVS\obj\Debug\WebAdminVS.esproj.CoreCompileInputs.cache
