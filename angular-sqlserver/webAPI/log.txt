@@ -9,3 +9,90 @@ select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap 
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'admin' and mat_khau = 'y'
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiennt01' and mat_khau = 'Kien121999'
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'a' and mat_khau = 'a'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'admin' and mat_khau = 'a'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'a'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 0 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 0 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 0 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 0 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 30 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 5 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 15 ROWS FETCH NEXT 5 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 10 ROWS FETCH NEXT 5 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 25 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 25 ROWS FETCH NEXT 25 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 25 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+SELECT * FROM users ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY

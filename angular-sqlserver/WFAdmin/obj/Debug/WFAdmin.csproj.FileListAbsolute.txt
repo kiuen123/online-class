@@ -1,0 +1,11 @@
+D:\project\online-class\angular-sqlserver\WFAdmin\bin\Debug\WFAdmin.exe.config
+D:\project\online-class\angular-sqlserver\WFAdmin\bin\Debug\WFAdmin.exe
+D:\project\online-class\angular-sqlserver\WFAdmin\bin\Debug\WFAdmin.pdb
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.csproj.AssemblyReference.cache
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.csproj.SuggestedBindingRedirects.cache
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.Form1.resources
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.Properties.Resources.resources
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.csproj.GenerateResource.cache
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.csproj.CoreCompileInputs.cache
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.exe
+D:\project\online-class\angular-sqlserver\WFAdmin\obj\Debug\WFAdmin.pdb
