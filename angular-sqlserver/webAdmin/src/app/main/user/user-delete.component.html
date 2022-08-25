@@ -1,0 +1,20 @@
+<h2>Xóa tài khoản {{ cruser.ten }}</h2>
+
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Tên</mat-label>
+    <input matInput [(ngModel)]="cruser.ten" disabled="true" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="cruser.email" disabled="true" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tóm tắt</mat-label>
+    <input matInput [(ngModel)]="cruser.tom_tat" disabled="true" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="onYesClick()">Submit</button>
+</div>
