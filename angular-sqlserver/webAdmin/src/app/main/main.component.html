@@ -6,7 +6,7 @@
     (click)="drawer.toggle()"
   ></mat-icon>
   <button mat-button [matMenuTriggerFor]="menu">
-    Xin chào {{ user[0].ten }}
+    {{ user[0].ten }}
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="logout()">
@@ -16,8 +16,18 @@
   </mat-menu>
 </header>
 
-<mat-drawer-container [hasBackdrop]="false">
-  <mat-drawer #drawer mode="side" opened class="side">
+<mat-drawer-container
+  [hasBackdrop]="false"
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  [class.example-is-mobile]="mobileQuery.matches"
+>
+  <mat-drawer
+    #drawer
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    opened
+    class="side"
+    fixedTopGap="56"
+  >
     <app-sidebar></app-sidebar>
   </mat-drawer>
   <mat-drawer-content class="content">

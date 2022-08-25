@@ -29,4 +29,69 @@ export class UserApiService {
         })
       );
   };
+
+  getAllUser = () => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/User/GetAllUser';
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('userlist', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  getUserPage = (CurentPage: number, PageLength: number) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink =
+      '/api/User/GetUserPage?' +
+      'CurentPage=' +
+      CurentPage +
+      '&PageLength=' +
+      PageLength;
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('userpage', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  getUserbyId = (id: string) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/User/GetUserbyId?id=' + id;
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('usercr', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
 }

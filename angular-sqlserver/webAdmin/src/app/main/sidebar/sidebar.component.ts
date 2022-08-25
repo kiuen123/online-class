@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+export interface Section {
+  title: string;
+  icon: string;
+  url: string;
+}
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
+  links: Section[] = [
+    {
+      title: 'User',
+      icon: 'person',
+      url: './user',
+    },
+  ];
+  ngOnInit(): void {}
 }

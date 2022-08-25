@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialExampleModule } from '../../material.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 const routers: Routes = [{ path: '', component: LoginComponent }];
 
 @NgModule({
@@ -22,6 +23,7 @@ const routers: Routes = [{ path: '', component: LoginComponent }];
     ReactiveFormsModule,
     MatInputModule,
     MaterialExampleModule,
+    MatSnackBarModule,
   ],
   providers: [],
   exports: [],

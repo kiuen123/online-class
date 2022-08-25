@@ -7,10 +7,11 @@
       matInput
       placeholder="User name"
       name="username"
-      [(ngModel)]="model.username"
+      [(ngModel)]="model.ten_dang_nhap"
       #username="ngModel"
       required
     />
+    <mat-error>Tên đăng nhập không được để trống</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>password</mat-label>
@@ -20,7 +21,7 @@
       name="password"
       #password="ngModel"
       placeholder="password"
-      [(ngModel)]="model.password"
+      [(ngModel)]="model.mat_khau"
       required
     />
     <button
@@ -32,6 +33,8 @@
     >
       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
     </button>
+
+    <mat-error>Mạt khẩu không được để trống</mat-error>
   </mat-form-field>
   <button mat-raised-button class="submit" color="primary" (click)="login()">
     Login
