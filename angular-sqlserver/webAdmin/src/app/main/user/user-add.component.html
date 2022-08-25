@@ -1,0 +1,70 @@
+<h2>Thêm người dùng mới</h2>
+
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Tên đăng nhập</mat-label>
+    <input
+      matInput
+      [(ngModel)]="cruser.ten_dang_nhap"
+      required
+      name="username"
+      (blur)="checkusername(cruser.ten_dang_nhap)"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Mật khẩu</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      name="password"
+      [(ngModel)]="cruser.mat_khau"
+      required
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tên</mat-label>
+    <input matInput [(ngModel)]="cruser.ten" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      [(ngModel)]="cruser.email"
+      type="email"
+      required
+      (blur)="checkemail(cruser.email)"
+    />
+  </mat-form-field>
+  <div style="padding: 0 0.5rem">
+    <label>Vai trò: </label>
+    <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-button value="student" style="margin-right: 0.5rem">
+        Học sinh
+      </mat-radio-button>
+      <mat-radio-button value="teacher">Giáo viên</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Tóm tắt</mat-label>
+    <input matInput [(ngModel)]="cruser.tom_tat" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Ảnh</mat-label>
+    <input matInput [(ngModel)]="cruser.anh_dai_dien" />
+  </mat-form-field>
+  <img src="{{ cruser.anh_dai_dien }}" alt="" />
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="onYesClick()">Submit</button>
+</div>

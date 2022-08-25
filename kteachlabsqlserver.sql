@@ -252,3 +252,8 @@ drop database kteachlab;
 /*test query*/
 SELECT * FROM users ORDER BY id OFFSET 0*10 ROWS FETCH NEXT 10 ROWS ONLY;
 update users set email = 'khangnt01@gmail.com', ten = N'Nguyễn Thành Khang', anh_dai_dien = 'a', tom_tat = N'a' where id = 10
+delete users where id = 4
+INSERT INTO users
+  ( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
+VALUES
+  ( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')

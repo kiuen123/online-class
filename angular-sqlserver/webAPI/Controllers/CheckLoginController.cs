@@ -42,5 +42,51 @@ namespace webAPI.Controllers
             }
             return new JsonResult(table);
         }
+
+        [HttpGet("CheckEmail")]
+        public JsonResult CheckEmail(String email)
+        {
+            string query = "select email from users where email = '" + email + "'";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
+        [HttpGet("CheckUsername")]
+        public JsonResult CheckUsername(String username)
+        {
+            string query = "select ten_dang_nhap from users where ten_dang_nhap = '" + username+"'";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
     }
 }

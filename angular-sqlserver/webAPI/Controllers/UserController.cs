@@ -85,6 +85,31 @@ namespace webAPI.Controllers
             return new JsonResult(table);
         }
 
+        [HttpPut("AddUser")]
+        public JsonResult AddUserbyId(User user)
+        {
+            string query = "INSERT INTO users ( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)" +
+                "VALUES" +
+                "( '"+user.ten_dang_nhap+"', '"+user.mat_khau+"', '"+user.email+"', N'"+user.ten+"', '"+user.vai_tro+"', '"+user.anh_dai_dien+"', N'"+user.tom_tat+"')";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
         [HttpPatch("UpdateUserbyId")]
         public JsonResult EditUserbyId(EditUser user)
         {
