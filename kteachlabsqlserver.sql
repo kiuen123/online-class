@@ -257,3 +257,4 @@ INSERT INTO users
   ( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
 VALUES
   ( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')
+select * from users where ten like '%K%'

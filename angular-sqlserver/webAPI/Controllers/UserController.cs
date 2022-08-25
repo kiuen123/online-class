@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using webAPI.Model;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace webAPI.Controllers
 {
@@ -62,10 +63,11 @@ namespace webAPI.Controllers
             return new JsonResult(table);
         }
 
-        [HttpGet("GetUserPage")]
-        public JsonResult GetUserbyId(int CurentPage,int PageLength)
+        [HttpGet("SearchUser")]
+        public JsonResult SearchUser(string colum,string content, int CurentPage, int PageLength)
         {
-            string query = "SELECT * FROM users ORDER BY id OFFSET "+ CurentPage * PageLength + " ROWS FETCH NEXT "+ PageLength + " ROWS ONLY";
+            string query = "select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where "+ colum + " like '%"+ content + "%' "+
+                "ORDER BY id OFFSET "+ CurentPage * PageLength + " ROWS FETCH NEXT "+ PageLength + " ROWS ONLY";
             WriteLog writeLog = new WriteLog();
             writeLog.wirte(query);
             DataTable table = new DataTable();
