@@ -13,6 +13,11 @@
     <mat-label>Tóm tắt</mat-label>
     <input matInput [(ngModel)]="cruser.tom_tat" />
   </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Ảnh</mat-label>
+    <input matInput [(ngModel)]="cruser.anh_dai_dien" />
+  </mat-form-field>
+  <img src="{{ cruser.anh_dai_dien }}" alt="" />
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>

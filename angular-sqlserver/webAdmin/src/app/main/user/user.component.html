@@ -1,3 +1,24 @@
+<div>
+  <button mat-button color="primary" matTooltip="" (click)="adduser()">
+    <mat-icon>person_add</mat-icon>
+    Thêm mới
+  </button>
+  <div class="search-bar">
+    <mat-form-field appearance="fill">
+      <mat-label>Tìm kiếm</mat-label>
+      <input matInput [(ngModel)]="content" (blur)="searchUser(searchof,content,curentPage,pageSize)" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>
+        Tìm kiếm theo
+      </mat-label>
+      <mat-select required [(value)]="searchof">
+        <mat-option *ngFor="let option of options" value={{option}}>{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<hr />
 <div class="all-user">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
@@ -28,15 +49,11 @@
     <ng-container matColumnDef="action" stickyEnd>
       <th mat-header-cell *matHeaderCellDef class="action-col">Thao tác</th>
       <td mat-cell *matCellDef="let element" class="action-col">
-        <button mat-button color="primary" matTooltip="" (click)="edituser(element.id)">
+        <button mat-button color="primary" matTooltip="" (click)="updateuser(element)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button
-          mat-button
-          color="primary"
-          matTooltip=""
-          *ngIf="element.vai_tro != 'admin'"
-        >
+        <button mat-button color="primary" matTooltip="" *ngIf="element.vai_tro != 'admin'"
+          (click)="deleteuser(element)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
@@ -45,21 +62,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-  <mat-paginator
-    length="{{ pagelength }}"
-    [pageSize]="pageSize"
-    [pageSizeOptions]="pageSizeOptions"
-    [pageIndex]="curentPage"
-    aria-label="Select page"
-    (page)="onChangePage($event)"
-    showFirstLastButtons
-  >
+  <mat-paginator length="{{ pagelength }}" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    [pageIndex]="curentPage" aria-label="Select page" (page)="onChangePage($event)" showFirstLastButtons>
   </mat-paginator>
 
-  <div class="lorem">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat illo
-    aspernatur dolores fugit cumque. Ut consequatur facilis nulla quo
-    perferendis voluptas et voluptates, fugiat quos soluta officiis qui corporis
-    dolorem?
-  </div>
 </div>

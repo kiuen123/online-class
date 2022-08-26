@@ -1,13 +1,29 @@
 .all-user {
   width: 100%;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .lorem {
   color: #fafafa;
 }
+
 .action-col {
   text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+.search-bar {
+  display: flex;
+}
+.search-bar > mat-form-field ~ mat-form-field {
+  width: 75%;
+}
+.app-user {
+  flex: 1;
 }

@@ -973,3 +973,6 @@ select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' 
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 25 ROWS ONLY
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY

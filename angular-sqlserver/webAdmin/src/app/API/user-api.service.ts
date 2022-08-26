@@ -50,32 +50,7 @@ export class UserApiService {
       );
   };
 
-  getUserPage = (CurentPage: number, PageLength: number) => {
-    let headers = new HttpHeaders()
-      .set('content-type', 'application/json')
-      .set('Access-Control-Allow-Origin', '*');
-    const userlink =
-      '/api/User/GetUserPage?' +
-      'CurentPage=' +
-      CurentPage +
-      '&PageLength=' +
-      PageLength;
-    return this.http
-      .get(this.link + userlink, {
-        headers: headers,
-      })
-      .pipe(
-        map((res: any) => {
-          sessionStorage.setItem('userpage', JSON.stringify(res));
-          return res;
-        }),
-        catchError((err) => {
-          return err;
-        })
-      );
-  };
-
-  getUserbyId = (id: string) => {
+  getUserbyId = (id: any) => {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
@@ -86,7 +61,135 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('usercr', JSON.stringify(res));
+          sessionStorage.setItem('cruser', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  updateUser = (cruser: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/User/UpdateUserbyId';
+    return this.http
+      .patch(this.link + userlink, cruser, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  deleteUser = (id: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/User/DeleteUserbyId?id=' + id;
+    return this.http
+      .delete(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  addUser = (user: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/User/AddUser';
+    return this.http
+      .put(this.link + userlink, user, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  checkUsername = (username: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/CheckLogin/CheckUsername?username=' + username;
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  checkEmail = (email: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink = '/api/CheckLogin/CheckEmail?email=' + email;
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
+
+  searchUser = (
+    colum: string,
+    content: string,
+    CurentPage: number,
+    PageLength: number
+  ) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const userlink =
+      '/api/User/SearchUser?colum=' +
+      colum +
+      '&content=' +
+      content +
+      '&CurentPage=' +
+      CurentPage +
+      '&PageLength=' +
+      PageLength;
+    return this.http
+      .get(this.link + userlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('searchresults', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
