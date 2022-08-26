@@ -63,27 +63,29 @@ CREATE TABLE course
   ten_lop nvarchar(255) NOT NULL,
   ngay_bat_dau date NOT NULL,
   ngay_ket_thuc date NOT NULL,
-  link_online ntext NOT NULL
+  gio_bat_dau time NOT NULL,
+  gio_ket_thuc time NOT NULL,
+  link_online nvarchar(255) NOT NULL
 )
 
 INSERT INTO course
-  ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online)
+  ( ten_lop, ngay_bat_dau, ngay_ket_thuc,gio_bat_dau,gio_ket_thuc, link_online)
 VALUES
-  ( N'Machine Learning', '2021-12-11', '2022-1-20', N''),
-  ( N'Web3D', '2021-12-11', '2022-1-20', N''),
-  ( N'android', '2021-12-11', '2022-1-20', N''),
-  ( N'Cơ sở dữ liệu', '2021-12-11', '2022-1-20', N''),
-  ( N'Khai phá dữ liệu', '2021-12-11', '2022-1-20', N''),
-  ( N'Kiểm thử', '2021-12-11', '2022-1-20', N''),
-  ( N'lập trình phân tán', '2021-12-11', '2022-1-20', N''),
-  ( N'Linux và phần mềm mã nguồn mở', '2021-12-11', '2022-1-20', N''),
-  ( N'Phát triển dự án', '2021-12-11', '2022-1-20', N''),
-  ( N'Ngôn ngữ lập trình', '2021-12-11', '2022-1-20', N''),
-  ( N'Toán rời rạc', '2021-12-11', '2022-1-20', N''),
-  ( N'Xác suất thống kê', '2021-12-11', '2022-1-20', N''),
-  ( N'Mạng máy tính', '2021-12-11', '2022-1-20', N''),
-  ( N'Machine Learning 02', '2021-12-11', '2022-1-20', N''),
-  ( N'Machine Learning 03', '2021-12-11', '2022-1-20', N'');
+  ( N'Machine Learning', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Web3D', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'android', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Cơ sở dữ liệu', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Khai phá dữ liệu', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Kiểm thử', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'lập trình phân tán', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Linux và phần mềm mã nguồn mở', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Phát triển dự án', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Ngôn ngữ lập trình', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Toán rời rạc', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Xác suất thống kê', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Mạng máy tính', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Machine Learning 02', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
+  ( N'Machine Learning 03', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N'');
 
 /*bảng class*/
 CREATE TABLE class
@@ -102,6 +104,24 @@ alter table class
 add constraint class_users
 foreign key (id_users)
 references users(id)
+
+INSERT INTO class( id_course, id_users, teacher)
+VALUES 
+	( 1, 2, 1),
+	( 2, 2, 1),
+	( 3, 2, 1),
+	( 4, 2, 1),
+	( 5, 2, 1),
+	( 6, 2, 1),
+	( 7, 2, 1),
+	( 8, 2, 1),
+	( 9, 2, 1),
+	( 10, 2, 1),
+	( 11, 2, 1),
+	( 12, 2, 1),
+	( 13, 2, 1),
+	( 14, 2, 1),
+	( 15, 2, 1)
 
 /*bảng thời gian học*/
 CREATE TABLE learntime
@@ -260,3 +280,12 @@ INSERT INTO users( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, t
 VALUES( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')
 
 select * from users where ten like '%K%'
+
+select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, course.gio_bat_dau as gio_bat_dau, course.gio_ket_thuc as gio_ket_thuc, course.link_online as link_online,
+count(class.id_users) as so_thanh_vien 
+from course,class 
+where course.id = class.id_course  and course.id  like '%1%'
+group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.gio_bat_dau, course.gio_ket_thuc, course.link_online
+ORDER BY course.id OFFSET 0*10 ROWS FETCH NEXT 10  ROWS ONLY
+
+select link_online from course

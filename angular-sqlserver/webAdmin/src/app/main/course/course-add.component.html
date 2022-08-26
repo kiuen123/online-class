@@ -1,0 +1,32 @@
+<h2>Thêm người dùng mới</h2>
+
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Tên khóa học</mat-label>
+        <input matInput [(ngModel)]="course.ten_lop" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Ngày bắt đầu khóa học</mat-label>
+        <input matInput [(ngModel)]="course.ngay_bat_dau" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Ngày kết thúc khóa học</mat-label>
+        <input matInput [(ngModel)]="course.ngay_ket_thuc" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Giờ bắt đầu khóa học</mat-label>
+        <input matInput [(ngModel)]="course.gio_bat_dau" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Giờ kết thúc khóa học</mat-label>
+        <input matInput [(ngModel)]="course.gio_ket_thuc" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Link online</mat-label>
+        <input matInput [(ngModel)]="course.link_online" />
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial (click)="onYesClick()">Submit</button>
+</div>

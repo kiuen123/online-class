@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+mat-form-field {
+  width: 100%;
+}
+.search-bar {
+  display: flex;
+}
+.search-bar > mat-form-field ~ mat-form-field {
+  width: 75%;
+}
+.app-user {
+  flex: 1;
+}
+
+.action-col {
+  text-align: center;
+}
+.all-user {
+  width: 100%;
+}
