@@ -16,6 +16,17 @@ CREATE TABLE users
   tom_tat ntext NOT NULL
 )
 
+go
+create trigger ko_xoa_admin on users
+instead of delete as 
+if (select users.vai_tro from users, deleted where  users.vai_tro = deleted.vai_tro) = 'admin'
+begin
+	print N'ko xóa admin'
+	Rollback tran
+end
+
+delete from users where id = 37
+
 INSERT INTO users
   ( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
 VALUES
@@ -63,8 +74,6 @@ CREATE TABLE course
   ten_lop nvarchar(255) NOT NULL,
   ngay_bat_dau date NOT NULL,
   ngay_ket_thuc date NOT NULL,
-  gio_bat_dau time NOT NULL,
-  gio_ket_thuc time NOT NULL,
   link_online nvarchar(255) NOT NULL
 )
 
@@ -281,11 +290,11 @@ VALUES( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'stu
 
 select * from users where ten like '%K%'
 
-select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, course.gio_bat_dau as gio_bat_dau, course.gio_ket_thuc as gio_ket_thuc, course.link_online as link_online,
-count(class.id_users) as so_thanh_vien 
-from course,class 
-where course.id = class.id_course  and course.id  like '%1%'
-group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.gio_bat_dau, course.gio_ket_thuc, course.link_online
+select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, users.ten as giao_vien, course.link_online as link_online,
+count(class.id_users) as so_thanh_vien
+from course,class,users
+where course.id = class.id_course and class.id_users = users.id and course.id  like '%%'
+group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.gio_bat_dau, course.gio_ket_thuc, course.link_online, users.ten
 ORDER BY course.id OFFSET 0*10 ROWS FETCH NEXT 10  ROWS ONLY
 
 select link_online from course

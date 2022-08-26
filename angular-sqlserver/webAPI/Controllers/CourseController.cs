@@ -19,7 +19,8 @@ namespace webAPI.Controllers
         [HttpGet("GetAllCourse")]
         public JsonResult GetAllUser()
         {
-            string query = "select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc," +
+            string query = "select course.id as id_course, course.ten_lop as ten_lop, " +
+                "course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc," +
                 "count(class.id_users) as so_thanh_vien " +
                 "from course,class " +
                 "where course.id = class.id_course " +
@@ -48,12 +49,10 @@ namespace webAPI.Controllers
         {
             string query = "select course.id as id_course, course.ten_lop as ten_lop, " +
                 "course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc," +
-                "course.gio_bat_dau as gio_bat_dau, course.gio_ket_thuc as gio_ket_thuc, course.link_online as link_online," +
-                "count(class.id_users) as so_thanh_vien " +
-                "from course,class " +
-                "where course.id = class.id_course " + "and course.id = " + id +
-                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc," +
-                "course.gio_bat_dau, course.gio_ket_thuc, course.link_online";
+                "users.ten as giao_vien, course.link_online as link_online, count(class.id_users) as so_thanh_vien " +
+                "from course,class,users " +
+                "where course.id = class.id_course " + " and class.id_users = users.id and course.id = " + id +
+                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten";
             WriteLog writeLog = new WriteLog();
             writeLog.wirte(query);
             DataTable table = new DataTable();
@@ -79,18 +78,14 @@ namespace webAPI.Controllers
             // convert colum to sql syntax
             if (colum == "id") colum = "course.id";
             if (colum == "ten_lop") colum = "course.ten_lop";
-            if (colum == "ngay_bat_dau") colum = "course.ngay_bat_dau";
-            if (colum == "ngay_ket_thuc") colum = "course.ngay_ket_thuc";
+            if (colum == "giao_vien") colum = "users.ten";
 
-            string query = "select course.id as id_course, course.ten_lop as ten_lop, " +
-                "course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, " +
-                "course.gio_bat_dau as gio_bat_dau, course.gio_ket_thuc as gio_ket_thuc, course.link_online as link_online," +
-                "count(class.id_users) as so_thanh_vien " +
-                "from course,class  " +
-                "where course.id = class.id_course and " + colum + " like '%" + content + "%' " +
-                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc," +
-                "course.gio_bat_dau, course.gio_ket_thuc, course.link_online " +
-                "ORDER BY id OFFSET " + CurentPage * PageLength + " ROWS FETCH NEXT " + PageLength + " ROWS ONLY";
+            string query = "select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, " +
+                "users.ten as giao_vien, course.link_online as link_online, count(class.id_users) as so_thanh_vien " +
+                "from course,class,users " +
+                "where course.id = class.id_course and class.id_users = users.id and " + colum + " like '%" + content + "%' " +
+                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten " +
+                "ORDER BY course.id OFFSET " + CurentPage * PageLength + " ROWS FETCH NEXT " + PageLength + " ROWS ONLY";
             WriteLog writeLog = new WriteLog();
             writeLog.wirte(query);
             DataTable table = new DataTable();
