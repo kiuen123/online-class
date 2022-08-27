@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { catchError, map, observable, isEmpty } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map } from 'rxjs';
 import { UrlApiService } from './url-api.service';
 @Injectable({
   providedIn: 'root',
@@ -14,9 +14,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/CheckLogin/CheckLogin';
+    const exlink = '/api/CheckLogin/CheckLogin';
     return this.http
-      .post(this.link + userlink, data, {
+      .post(this.link + exlink, data, {
         headers: headers,
       })
       .pipe(
@@ -34,9 +34,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/User/GetAllUser';
+    const exlink = '/api/User/GetAllUser';
     return this.http
-      .get(this.link + userlink, {
+      .get(this.link + exlink, {
         headers: headers,
       })
       .pipe(
@@ -50,13 +50,33 @@ export class UserApiService {
       );
   };
 
+  getAllTeacher() {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink = '/api/User/GetAllTeacher';
+    return this.http
+      .get(this.link + exlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('teacherlist', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  }
+
   getUserbyId = (id: any) => {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/User/GetUserbyId?id=' + id;
+    const exlink = '/api/User/GetUserbyId?id=' + id;
     return this.http
-      .get(this.link + userlink, {
+      .get(this.link + exlink, {
         headers: headers,
       })
       .pipe(
@@ -74,9 +94,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/User/UpdateUserbyId';
+    const exlink = '/api/User/UpdateUserbyId';
     return this.http
-      .patch(this.link + userlink, cruser, {
+      .patch(this.link + exlink, cruser, {
         headers: headers,
       })
       .pipe(
@@ -93,9 +113,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/User/DeleteUserbyId?id=' + id;
+    const exlink = '/api/User/DeleteUserbyId?id=' + id;
     return this.http
-      .delete(this.link + userlink, {
+      .delete(this.link + exlink, {
         headers: headers,
       })
       .pipe(
@@ -112,9 +132,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/User/AddUser';
+    const exlink = '/api/User/AddUser';
     return this.http
-      .put(this.link + userlink, user, {
+      .put(this.link + exlink, user, {
         headers: headers,
       })
       .pipe(
@@ -131,9 +151,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/CheckLogin/CheckUsername?username=' + username;
+    const exlink = '/api/CheckLogin/CheckUsername?username=' + username;
     return this.http
-      .get(this.link + userlink, {
+      .get(this.link + exlink, {
         headers: headers,
       })
       .pipe(
@@ -150,9 +170,9 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink = '/api/CheckLogin/CheckEmail?email=' + email;
+    const exlink = '/api/CheckLogin/CheckEmail?email=' + email;
     return this.http
-      .get(this.link + userlink, {
+      .get(this.link + exlink, {
         headers: headers,
       })
       .pipe(
@@ -174,7 +194,7 @@ export class UserApiService {
     let headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    const userlink =
+    const exlink =
       '/api/User/SearchUser?colum=' +
       colum +
       '&content=' +
@@ -184,12 +204,12 @@ export class UserApiService {
       '&PageLength=' +
       PageLength;
     return this.http
-      .get(this.link + userlink, {
+      .get(this.link + exlink, {
         headers: headers,
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('searchresults', JSON.stringify(res));
+          sessionStorage.setItem('searchuserresults', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {

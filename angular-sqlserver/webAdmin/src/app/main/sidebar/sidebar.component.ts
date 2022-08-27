@@ -18,6 +18,11 @@ export class SidebarComponent implements OnInit {
       icon: 'person',
       url: './user',
     },
+    {
+      title: 'Course',
+      icon: 'local_library',
+      url: './course',
+    },
   ];
   ngOnInit(): void {}
 }

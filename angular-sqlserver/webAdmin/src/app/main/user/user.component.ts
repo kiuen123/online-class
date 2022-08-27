@@ -29,11 +29,10 @@ export interface UserIntefce {
 })
 export class UserComponent implements OnInit {
   constructor(
-    private router: Router,
     private UserApiService: UserApiService,
-    public dialog: MatDialog,
-    private _formBuilder: FormBuilder
+    public dialog: MatDialog
   ) {}
+
   // tên các cột
   displayedColumns: string[] = [
     'id',
@@ -46,9 +45,8 @@ export class UserComponent implements OnInit {
   userlist: UserIntefce[] = JSON.parse(
     sessionStorage.getItem('userlist') || '[]'
   );
-  userpage: UserIntefce[] = JSON.parse(
-    sessionStorage.getItem('userpage') || '[]'
-  );
+  userpage: UserIntefce[] = [];
+  
   // data của bảng
   dataSource = this.userpage;
 
@@ -148,7 +146,7 @@ export class UserComponent implements OnInit {
       PageLength
     ).subscribe(() => {
       this.userpage = JSON.parse(
-        sessionStorage.getItem('searchresults') || '{}'
+        sessionStorage.getItem('searchuserresults') || '{}'
       );
       this.dataSource = this.userpage;
     });

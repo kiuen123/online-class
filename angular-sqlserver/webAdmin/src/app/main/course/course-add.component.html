@@ -3,27 +3,27 @@
 <div mat-dialog-content>
     <mat-form-field appearance="fill">
         <mat-label>Tên khóa học</mat-label>
-        <input matInput [(ngModel)]="course.ten_lop" required />
+        <input matInput [(ngModel)]="course.ten_lop" required (blur)="checkcoursename(course.ten_lop)" />
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Ngày bắt đầu khóa học</mat-label>
-        <input matInput [(ngModel)]="course.ngay_bat_dau" required />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Ngày kết thúc khóa học</mat-label>
-        <input matInput [(ngModel)]="course.ngay_ket_thuc" required />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Giờ bắt đầu khóa học</mat-label>
-        <input matInput [(ngModel)]="course.gio_bat_dau" />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Giờ kết thúc khóa học</mat-label>
-        <input matInput [(ngModel)]="course.gio_ket_thuc" />
+        <mat-label>Khoảng thời gian học</mat-label>
+        <mat-date-range-input [rangePicker]="picker" required>
+            <input matStartDate placeholder="Start date" [(ngModel)]="course.ngay_bat_dau" required>
+            <input matEndDate placeholder="End date" [(ngModel)]="course.ngay_ket_thuc" required>
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Link online</mat-label>
         <input matInput [(ngModel)]="course.link_online" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Giáo viên</mat-label>
+        <mat-select required [(value)]="teacher">
+            <mat-option *ngFor="let option of options" value={{option.id}}>{{option.ten}}</mat-option>
+        </mat-select>
     </mat-form-field>
 </div>
 <div mat-dialog-actions>

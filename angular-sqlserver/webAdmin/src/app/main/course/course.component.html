@@ -7,6 +7,9 @@
         <mat-form-field appearance="fill">
             <mat-label>Tìm kiếm</mat-label>
             <input matInput [(ngModel)]="content" (blur)="searchCourse(searchof,content,curentPage,pageSize)" />
+            <button mat-icon-button matSuffix (click)="searchCourse(searchof,content,curentPage,pageSize)">
+                <mat-icon>search</mat-icon>
+            </button>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>
@@ -33,29 +36,32 @@
 
         <ng-container matColumnDef="ngay_bat_dau">
             <th mat-header-cell *matHeaderCellDef>Ngày bắt đầu</th>
-            <td mat-cell *matCellDef="let element">{{ element.ngay_bat_dau.split('T', 1)[0] }}</td>
+            <td mat-cell *matCellDef="let element">
+                {{ element.ngay_bat_dau.split('T', 1)[0].split('-',3).reverse().join('-') }}
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="ngay_ket_thuc">
             <th mat-header-cell *matHeaderCellDef>Ngày kết thúc</th>
-            <td mat-cell *matCellDef="let element">{{ element.ngay_ket_thuc.split('T', 1)[0] }}</td>
+            <td mat-cell *matCellDef="let element">
+                {{ element.ngay_ket_thuc.split('T', 1)[0].split('-',3).reverse().join('-') }}
+            </td>
         </ng-container>
 
-        <ng-container matColumnDef="gio_bat_dau">
-            <th mat-header-cell *matHeaderCellDef>Giờ bắt đầu</th>
-            <td mat-cell *matCellDef="let element">{{ element.gio_bat_dau }}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="gio_ket_thuc">
-            <th mat-header-cell *matHeaderCellDef>Giờ kết thúc</th>
-            <td mat-cell *matCellDef="let element">{{ element.gio_ket_thuc }}</td>
-        </ng-container>
         <ng-container matColumnDef="link_online">
             <th mat-header-cell *matHeaderCellDef>Link online</th>
             <td mat-cell *matCellDef="let element">
-                <a (href)='element.link_online'>go to</a>
+                <button mat-button (click)='opentab(element.link_online)'>
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
             </td>
         </ng-container>
+
+        <ng-container matColumnDef="giao_vien">
+            <th mat-header-cell *matHeaderCellDef>Giáo viên</th>
+            <td mat-cell *matCellDef="let element">{{ element.giao_vien }}</td>
+        </ng-container>
+
         <ng-container matColumnDef="so_thanh_vien">
             <th mat-header-cell *matHeaderCellDef>Số thành viên</th>
             <td mat-cell *matCellDef="let element">{{ element.so_thanh_vien }}</td>
@@ -65,7 +71,7 @@
             <th mat-header-cell *matHeaderCellDef class="action-col">Thao tác</th>
             <td mat-cell *matCellDef="let element" class="action-col">
                 <button mat-button color="primary" matTooltip="">
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon>search</mat-icon>
                 </button>
             </td>
         </ng-container>

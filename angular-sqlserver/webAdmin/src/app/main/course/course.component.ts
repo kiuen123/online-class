@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { CourseApiService } from '../../API/course-api.service';
+import { UserApiService } from '../../API/user-api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {
@@ -18,9 +19,8 @@ export interface CourseIntefce {
   ten_lop?: string;
   ngay_bat_dau?: string;
   ngay_ket_thuc?: string;
-  gio_bat_dau?: string;
-  gio_ket_thuc?: string;
   link_online?: string;
+  giao_vien?: string;
   so_thanh_vien?: string;
 }
 
@@ -41,9 +41,8 @@ export class CourseComponent implements OnInit {
     'ten_lop',
     'ngay_bat_dau',
     'ngay_ket_thuc',
-    'gio_bat_dau',
-    'gio_ket_thuc',
     'link_online',
+    'giao_vien',
     'so_thanh_vien',
     'action',
   ];
@@ -93,16 +92,10 @@ export class CourseComponent implements OnInit {
   }
 
   // search
-  options = [
-    'id',
-    'ten_lop',
-    'ngay_bat_dau',
-    'ngay_ket_thuc',
-    'gio_bat_dau',
-    'gio_ket_thuc',
-  ];
+  options = ['id', 'ten_lop', 'giao_vien'];
   searchof: string = this.options[0];
   content: string = '';
+
   searchCourse(
     colum: string,
     content: string,
@@ -123,6 +116,10 @@ export class CourseComponent implements OnInit {
       );
       this.dataSource = this.coursepage;
     });
+  }
+
+  opentab(link: string) {
+    window.open(link, '_blank');
   }
 
   addcourse() {
@@ -152,24 +149,27 @@ export class CourseAdd {
   constructor(
     public dialogRef: MatDialogRef<CourseAdd>,
     private CourseApiService: CourseApiService,
+    private UserApiService: UserApiService,
     private _snackBar: MatSnackBar,
     private _formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: CourseIntefce
   ) {}
-
+  teacher: any = '';
+  options: any = [];
   course: CourseIntefce = {
     id_course: '0',
     ten_lop: '',
     ngay_bat_dau: '',
     ngay_ket_thuc: '',
-    gio_bat_dau: '',
-    gio_ket_thuc: '',
     link_online: '',
+    giao_vien: '',
     so_thanh_vien: '',
   };
   hide = true;
   valid = true;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getteacher();
+  }
 
   onNoClick(): void {
     this.openSnackBar('Hủy chỉnh sửa', 'Đóng');
@@ -180,15 +180,36 @@ export class CourseAdd {
     if (
       this.course.ten_lop == '' ||
       this.course.ngay_bat_dau == '' ||
-      this.course.ngay_ket_thuc == ''
+      this.course.ngay_ket_thuc == '' ||
+      this.teacher == ''
     ) {
       this.openSnackBar('Hãy bổ sung thông tin', 'Đóng');
     } else {
       if (this.valid == false) {
         this.openSnackBar('Hãy sửa lại thông tin', 'Đóng');
       } else {
+        console.log(this.course);
       }
     }
+  }
+
+  getteacher() {
+    this.UserApiService.getAllTeacher().subscribe(() => {
+      this.options = JSON.parse(sessionStorage.getItem('teacherlist') || '{}');
+    });
+  }
+
+  so_luong_trung: any = {};
+  checkcoursename(coursename: any) {
+    this.CourseApiService.checkCourseName(coursename).subscribe(() => {
+      this.so_luong_trung = JSON.parse(
+        sessionStorage.getItem('coursenum') || '{}'
+      );
+      if (this.so_luong_trung[0].so_luong_trung > 0) {
+        this.valid = false;
+        this.openSnackBar('Tên lớp đã tồn tại', 'Đóng');
+      }
+    });
   }
 
   durationInSeconds = 5;

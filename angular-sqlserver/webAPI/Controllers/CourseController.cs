@@ -104,5 +104,28 @@ namespace webAPI.Controllers
             }
             return new JsonResult(table);
         }
+
+        [HttpGet("GetCourseName")]
+        public JsonResult GetCourseName(String coursename)
+        {
+            string query = "select count(course.ten_lop) as so_luong_trung from course where ten_lop = '" + coursename + "'";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
     }
 }

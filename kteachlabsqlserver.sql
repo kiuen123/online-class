@@ -25,7 +25,7 @@ begin
 	Rollback tran
 end
 
-delete from users where id = 37
+delete from users where id = 1
 
 INSERT INTO users
   ( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
@@ -78,23 +78,23 @@ CREATE TABLE course
 )
 
 INSERT INTO course
-  ( ten_lop, ngay_bat_dau, ngay_ket_thuc,gio_bat_dau,gio_ket_thuc, link_online)
+  ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online)
 VALUES
-  ( N'Machine Learning', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Web3D', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'android', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Cơ sở dữ liệu', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Khai phá dữ liệu', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Kiểm thử', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'lập trình phân tán', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Linux và phần mềm mã nguồn mở', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Phát triển dự án', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Ngôn ngữ lập trình', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Toán rời rạc', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Xác suất thống kê', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Mạng máy tính', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Machine Learning 02', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N''),
-  ( N'Machine Learning 03', '2021-12-11', '2022-1-20','00:00:01','00:00:02', N'');
+  ( N'Machine Learning', '2021-12-11', '2022-1-20', N''),
+  ( N'Web3D', '2021-12-11', '2022-1-20', N''),
+  ( N'android', '2021-12-11', '2022-1-20', N''),
+  ( N'Cơ sở dữ liệu', '2021-12-11', '2022-1-20', N''),
+  ( N'Khai phá dữ liệu', '2021-12-11', '2022-1-20', N''),
+  ( N'Kiểm thử', '2021-12-11', '2022-1-20', N''),
+  ( N'lập trình phân tán', '2021-12-11', '2022-1-20', N''),
+  ( N'Linux và phần mềm mã nguồn mở', '2021-12-11', '2022-1-20', N''),
+  ( N'Phát triển dự án', '2021-12-11', '2022-1-20', N''),
+  ( N'Ngôn ngữ lập trình', '2021-12-11', '2022-1-20', N''),
+  ( N'Toán rời rạc', '2021-12-11', '2022-1-20', N''),
+  ( N'Xác suất thống kê', '2021-12-11', '2022-1-20', N''),
+  ( N'Mạng máy tính', '2021-12-11', '2022-1-20', N''),
+  ( N'Machine Learning 02', '2021-12-11', '2022-1-20', N''),
+  ( N'Machine Learning 03', '2021-12-11', '2022-1-20', N'');
 
 /*bảng class*/
 CREATE TABLE class
@@ -288,13 +288,18 @@ delete users where id = 4
 INSERT INTO users( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
 VALUES( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')
 
-select * from users where ten like '%K%'
+select * from users where ten like '%K%'	
 
 select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, users.ten as giao_vien, course.link_online as link_online,
 count(class.id_users) as so_thanh_vien
 from course,class,users
 where course.id = class.id_course and class.id_users = users.id and course.id  like '%%'
-group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.gio_bat_dau, course.gio_ket_thuc, course.link_online, users.ten
+group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten
 ORDER BY course.id OFFSET 0*10 ROWS FETCH NEXT 10  ROWS ONLY
 
-select link_online from course
+insert into course ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online)
+VALUES ( N'Angular 3', '2021-8-27', '2022-10-27', N'')
+INSERT INTO class( id_course, id_users, teacher)
+VALUES ( (select course.id from course where course.ten_lop = N'Angular 3' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)
+
+select count(course.ten_lop) as so_luong_trung from course where ten_lop = 'angular'	

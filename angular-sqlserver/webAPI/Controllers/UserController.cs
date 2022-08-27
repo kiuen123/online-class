@@ -40,6 +40,29 @@ namespace webAPI.Controllers
             return new JsonResult(table);
         }
 
+        [HttpGet("GetAllTeacher")]
+        public JsonResult GetAllTeacher()
+        {
+            string query = "select id,ten from users where vai_tro = 'teacher'";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
         [HttpGet("GetUserbyId")]
         public JsonResult GetUserbyId(int id)
         {
