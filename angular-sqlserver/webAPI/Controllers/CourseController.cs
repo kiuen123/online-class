@@ -134,12 +134,18 @@ namespace webAPI.Controllers
             string query = "insert into course ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online) " +
                 "VALUES ( N'Angular 6', '2021-8-27', '2022-10-27', N'') " +
                 "INSERT INTO class( id_course, id_users, teacher) " +
-                "VALUES ( (select course.id from course where course.ten_lop = N'Angular 6' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)";
+                "VALUES ( (select course.id from course where course.ten_lop = N'Angular 6' " +
+                "ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)";
             WriteLog writeLog = new WriteLog();
             writeLog.wirte(query);
             DataTable table = new DataTable();
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
             SqlDataReader myReader;
+
+            //var command = new SqlCommand();
+            //command.Connection = new SqlConnection(sqlDataSource);
+            //command.CommandText = query;
+
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
                 myCon.Open();
@@ -147,6 +153,9 @@ namespace webAPI.Controllers
                 {
                     myReader = nyCommand.ExecuteReader();
                     table.Load(myReader);
+
+                    //nyCommand.ExecuteNonQuery();
+
                     myReader.Close();
                     myCon.Close();
                 }
