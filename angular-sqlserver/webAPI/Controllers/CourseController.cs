@@ -127,5 +127,31 @@ namespace webAPI.Controllers
             }
             return new JsonResult(table);
         }
+
+        [HttpPut("AddCourse")]
+        public JsonResult AddUserbyId(User user)
+        {
+            string query = "insert into course ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online) " +
+                "VALUES ( N'Angular 6', '2021-8-27', '2022-10-27', N'') " +
+                "INSERT INTO class( id_course, id_users, teacher) " +
+                "VALUES ( (select course.id from course where course.ten_lop = N'Angular 6' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)";
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+            DataTable table = new DataTable();
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand nyCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = nyCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
     }
 }

@@ -159,7 +159,7 @@ export class CourseAdd {
   course: CourseIntefce = {
     id_course: '0',
     ten_lop: '',
-    ngay_bat_dau: '',
+    ngay_bat_dau: '0 0 0',
     ngay_ket_thuc: '',
     link_online: '',
     giao_vien: '',
@@ -167,6 +167,8 @@ export class CourseAdd {
   };
   hide = true;
   valid = true;
+  startdate: any;
+  enddate: any;
   ngOnInit(): void {
     this.getteacher();
   }
@@ -177,6 +179,13 @@ export class CourseAdd {
   }
 
   onYesClick(): void {
+    this.course.ngay_bat_dau = JSON.stringify(this.startdate)
+      .split('T', 1)[0]
+      .replace('"', '');
+    this.course.ngay_ket_thuc = JSON.stringify(this.enddate)
+      .split('T', 1)[0]
+      .replace('"', '');
+
     if (
       this.course.ten_lop == '' ||
       this.course.ngay_bat_dau == '' ||

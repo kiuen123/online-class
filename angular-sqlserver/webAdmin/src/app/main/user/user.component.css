@@ -1,5 +1,7 @@
 .all-user {
   width: 100%;
+  min-width: 800px;
+  overflow: auto;
 }
 
 table {

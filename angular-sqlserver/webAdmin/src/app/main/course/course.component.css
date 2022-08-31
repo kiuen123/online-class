@@ -1,6 +1,6 @@
 table {
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
 }
 
 mat-form-field {
@@ -12,13 +12,16 @@ mat-form-field {
 .search-bar > mat-form-field ~ mat-form-field {
   width: 75%;
 }
-.app-user {
-  flex: 1;
-}
 
 .action-col {
   text-align: center;
 }
 .all-user {
+  width: 100%;
+  min-width: 800px;
+  overflow: auto;
+}
+
+mat-paginator {
   width: 100%;
 }

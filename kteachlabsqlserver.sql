@@ -114,6 +114,18 @@ add constraint class_users
 foreign key (id_users)
 references users(id)
 
+go
+create trigger ten_course_trung on course
+for insert as
+IF (SELECT count(*) FROM course,inserted WHERE course.ten_lop = inserted.ten_lop ) > 1
+begin
+	print N'Tên course bị trùng'
+	Rollback tran
+end
+
+DROP TRIGGER ten_course_trung
+
+
 INSERT INTO class( id_course, id_users, teacher)
 VALUES 
 	( 1, 2, 1),
@@ -298,8 +310,8 @@ group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, c
 ORDER BY course.id OFFSET 0*10 ROWS FETCH NEXT 10  ROWS ONLY
 
 insert into course ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online)
-VALUES ( N'Angular 3', '2021-8-27', '2022-10-27', N'')
+VALUES ( N'Angular 6', '2021-8-27', '2022-10-27', N'')
 INSERT INTO class( id_course, id_users, teacher)
-VALUES ( (select course.id from course where course.ten_lop = N'Angular 3' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)
+VALUES ( (select course.id from course where course.ten_lop = N'Angular 6' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)
 
-select count(course.ten_lop) as so_luong_trung from course where ten_lop = 'angular'	
+select count(course.ten_lop) as so_luong_trung from course where ten_lop like '%angular%'	
