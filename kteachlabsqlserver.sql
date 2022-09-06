@@ -19,11 +19,13 @@ CREATE TABLE users
 go
 create trigger ko_xoa_admin on users
 instead of delete as 
-if (select users.vai_tro from users, deleted where  users.vai_tro = deleted.vai_tro) = 'admin'
+if (select users.vai_tro from users, deleted where users.vai_tro = deleted.vai_tro) = 'admin'
 begin
 	print N'ko xóa admin'
 	Rollback tran
 end
+
+drop trigger ko_xoa_admin
 
 delete from users where id = 1
 
@@ -295,7 +297,7 @@ SELECT * FROM users ORDER BY id OFFSET 0*10 ROWS FETCH NEXT 10 ROWS ONLY;
 
 update users set email = 'khangnt01@gmail.com', ten = N'Nguyễn Thành Khang', anh_dai_dien = 'a', tom_tat = N'a' where id = 10
 
-delete users where id = 4
+delete users where id = 41
 
 INSERT INTO users( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
 VALUES( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')

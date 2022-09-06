@@ -78,7 +78,25 @@ export class CourseApiService {
         map((res: any) => {
           sessionStorage.setItem('coursenum', JSON.stringify(res));
           console.log(sessionStorage.getItem('coursenum'));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  }
 
+  addCourse(data: any) {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink = '/api/Course/AddCourse';
+    return this.http
+      .post(this.link + exlink, data, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
           return res;
         }),
         catchError((err) => {

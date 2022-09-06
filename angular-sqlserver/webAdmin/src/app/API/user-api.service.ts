@@ -134,7 +134,7 @@ export class UserApiService {
       .set('Access-Control-Allow-Origin', '*');
     const exlink = '/api/User/AddUser';
     return this.http
-      .put(this.link + exlink, user, {
+      .post(this.link + exlink, user, {
         headers: headers,
       })
       .pipe(

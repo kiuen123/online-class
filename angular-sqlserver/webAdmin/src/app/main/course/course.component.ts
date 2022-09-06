@@ -154,7 +154,6 @@ export class CourseAdd {
     private _formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: CourseIntefce
   ) {}
-  teacher: any = '';
   options: any = [];
   course: CourseIntefce = {
     id_course: '0',
@@ -190,14 +189,27 @@ export class CourseAdd {
       this.course.ten_lop == '' ||
       this.course.ngay_bat_dau == '' ||
       this.course.ngay_ket_thuc == '' ||
-      this.teacher == ''
+      this.course.giao_vien == ''
     ) {
       this.openSnackBar('Hãy bổ sung thông tin', 'Đóng');
     } else {
       if (this.valid == false) {
         this.openSnackBar('Hãy sửa lại thông tin', 'Đóng');
       } else {
-        console.log(this.course);
+        this.CourseApiService.addCourse({
+          teacher_id: this.course.giao_vien,
+          ten_lop: this.course.ten_lop,
+          ngay_bat_dau: this.course.ngay_bat_dau,
+          ngay_ket_thuc: this.course.ngay_ket_thuc,
+          link_online: this.course.giao_vien,
+        }).subscribe((res: any) => {
+          const message = res.split(':')[0];
+          const rows_affected = res.split(':')[1];
+          if (message == 'rows_affected ' && rows_affected > 0) {
+            this.openSnackBar('Thêm khóa học thành công', 'Đóng');
+            this.dialogRef.close();
+          } else this.openSnackBar(res, 'Đóng');
+        });
       }
     }
   }
@@ -217,7 +229,7 @@ export class CourseAdd {
       if (this.so_luong_trung[0].so_luong_trung > 0) {
         this.valid = false;
         this.openSnackBar('Tên lớp đã tồn tại', 'Đóng');
-      }
+      } else this.valid = true;
     });
   }
 

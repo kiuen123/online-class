@@ -46,7 +46,7 @@ export class UserComponent implements OnInit {
     sessionStorage.getItem('userlist') || '[]'
   );
   userpage: UserIntefce[] = [];
-  
+
   // data của bảng
   dataSource = this.userpage;
 
@@ -178,8 +178,10 @@ export class UserUpdate {
 
   onYesClick(): void {
     this.UserApiService.updateUser(this.cruser).subscribe((res: any) => {
-      if (res == false) {
-        this.openSnackBar('Chỉnh sửa thành công', 'Đóng');
+      const message = res.split(':')[0];
+      const rows_affected = res.split(':')[1];
+      if (message == 'rows_affected' && rows_affected > 0) {
+        this.openSnackBar('Chỉnh sửa thông tin thành công', 'Đóng');
         this.dialogRef.close();
       } else this.openSnackBar(res, 'Đóng');
     });
@@ -222,7 +224,9 @@ export class UserDelete {
 
   onYesClick(): void {
     this.UserApiService.deleteUser(this.cruser.id).subscribe((res: any) => {
-      if (res == false) {
+      const message = res.split(':')[0];
+      const rows_affected = res.split(':')[1];
+      if (message == 'rows_affected' && rows_affected > 0) {
         this.openSnackBar('Xóa thành công', 'Đóng');
         this.dialogRef.close();
       } else this.openSnackBar(res, 'Đóng');
@@ -286,16 +290,14 @@ export class UserAdd {
     ) {
       this.openSnackBar('Hãy bổ sung thông tin', 'Đóng');
     } else {
-      if (this.valid == false) {
-        this.openSnackBar('Hãy sửa lại thông tin', 'Đóng');
-      } else {
-        this.UserApiService.addUser(this.cruser).subscribe((res: any) => {
-          if (res == false) {
-            this.openSnackBar('Thêm thành công', 'Đóng');
-            this.dialogRef.close();
-          } else this.openSnackBar(res, 'Đóng');
-        });
-      }
+      this.UserApiService.addUser(this.cruser).subscribe((res: any) => {
+        const message = res.split(':')[0];
+        const rows_affected = res.split(':')[1];
+        if (message == 'rows_affected' && rows_affected > 0) {
+          this.openSnackBar('Thêm thành công', 'Đóng');
+          this.dialogRef.close();
+        } else this.openSnackBar(res, 'Đóng');
+      });
     }
   }
 

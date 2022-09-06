@@ -6,6 +6,6 @@
         public string start_date { get; set; }
         public string end_date { get; set; }
         public string link_online { get; set; }
-        public int 
+        public int course_id { get; set; }
     }
 }
