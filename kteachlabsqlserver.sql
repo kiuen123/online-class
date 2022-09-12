@@ -3,6 +3,7 @@ create database kteachlab;
 
 use kteachlab;
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng user*/
 CREATE TABLE users
 (
@@ -19,7 +20,7 @@ CREATE TABLE users
 go
 create trigger ko_xoa_admin on users
 instead of delete as 
-if (select users.vai_tro from users, deleted where users.vai_tro = deleted.vai_tro) = 'admin'
+if (select count(*) from users, deleted where users.vai_tro = deleted.vai_tro and users.vai_tro= 'admin') > 0
 begin
 	print N'ko xóa admin'
 	Rollback tran
@@ -68,7 +69,8 @@ VALUES
   ( 'hattt04', '123456', 'hattt04@gmail.com', N'Trần Thị Thu Hà', 'student', '', N''),
   ( 'ledvh04', '123456', 'ledvh04@gmail.com', N'Đỗ Vũ Hoa Lê', 'student', '', N''),
   ( 'hoang04', '123456', 'datdt04@gmail.com', N'Nguyễn Huy Hoàng', 'student', '', N'');
-
+  
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng course*/
 CREATE TABLE course
 (
@@ -97,7 +99,8 @@ VALUES
   ( N'Mạng máy tính', '2021-12-11', '2022-1-20', N''),
   ( N'Machine Learning 02', '2021-12-11', '2022-1-20', N''),
   ( N'Machine Learning 03', '2021-12-11', '2022-1-20', N'');
-
+  
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng class*/
 CREATE TABLE class
 (
@@ -145,7 +148,8 @@ VALUES
 	( 13, 2, 1),
 	( 14, 2, 1),
 	( 15, 2, 1)
-
+	
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng thời gian học*/
 CREATE TABLE learntime
 (
@@ -160,6 +164,7 @@ add constraint learntime_course
 foreign key (id_course)
 references course(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*mã điểm danh*/
 CREATE TABLE checkcode
 (
@@ -177,6 +182,7 @@ add constraint checkcode_course
 foreign key (id_course)
 references course(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng điểm danh*/
 CREATE TABLE checkin
 (
@@ -195,6 +201,7 @@ add constraint checkin_users
 foreign key (id_users)
 references users(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng test*/
 CREATE TABLE test
 (
@@ -213,6 +220,7 @@ add constraint test_course
 foreign key (id_course)
 references course(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*test result*/
 CREATE TABLE testresult
 (
@@ -233,6 +241,7 @@ add constraint testresult_users
 foreign key (id_users)
 references users(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng store*/
 CREATE TABLE store
 (
@@ -249,6 +258,7 @@ add constraint store_class
 foreign key (id_course)
 references course(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng post*/
 CREATE TABLE post
 (
@@ -270,6 +280,7 @@ add constraint post_course
 foreign key (id_course)
 references course(id)
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*bảng comment*/
 CREATE TABLE comment
 (
@@ -290,30 +301,60 @@ add constraint comment_users
 foreign key (id_users)
 references users(id)
 
-drop database kteachlab;
+/* drop database kteachlab; */
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* procedure lấy danh sách lớp */
+go
+create procedure danh_sach_lop
+(
+	@sql as nvarchar(max),
+	@pagination as nvarchar(max)
+)
+as
+begin
+	declare @query nvarchar(1000) 
+	set @query = 'select users.ten, users.email, users.anh_dai_dien, users.vai_tro, class.teacher 
+	from course, users, class 
+	where course.id = class.id_course and users.id = class.id_users '
+	+ @sql
+	+ @pagination
+	exec (@query)
+end
 
-/*test query*/
-SELECT * FROM users ORDER BY id OFFSET 0*10 ROWS FETCH NEXT 10 ROWS ONLY;
+drop proc danh_sach_lop
 
-update users set email = 'khangnt01@gmail.com', ten = N'Nguyễn Thành Khang', anh_dai_dien = 'a', tom_tat = N'a' where id = 10
+exec danh_sach_lop 
+@sql = ' and course.id = 1 ',
+@pagination = ' order by course.id offset 0*10 row fetch next 10 rows only '
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* view đếm số thành viên trong khóa học */
+create view so_thanh_vien 
+as 
+select class.id_course as id_course, count(class.id_users) as so_thanh_vien from class group by class.id_course
 
-delete users where id = 41
+/* procedure lấy danh sách khóa học */
+go
+create procedure danh_sach_course
+(
+	@sql as nvarchar(max),
+	@pagination as nvarchar(max)
+)
+as
+begin
+	declare @query nvarchar(1000) 
+	set @query = 'select  course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, users.ten as giao_vien, 
+	course.link_online as link_online, so_thanh_vien.so_thanh_vien
+	from  course,so_thanh_vien,class,users
+	where course.id = so_thanh_vien.id_course and course.id = class.id_course and class.id_users = users.id and class.teacher = 1 '
+	/* content */
+	+ @sql
+	+ @pagination
+	exec (@query)
+end
 
-INSERT INTO users( ten_dang_nhap, mat_khau, email, ten, vai_tro, anh_dai_dien, tom_tat)
-VALUES( 'datdt01', '123456', 'datdt01@gmail.com', N'Dương Tiến Đạt', 'student', '', N'')
+/* drop proc danh_sach_course */
 
-select * from users where ten like '%K%'	
-
-select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, users.ten as giao_vien, course.link_online as link_online,
-count(class.id_users) as so_thanh_vien
-from course,class,users
-where course.id = class.id_course and class.id_users = users.id and course.id  like '%%'
-group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten
-ORDER BY course.id OFFSET 0*10 ROWS FETCH NEXT 10  ROWS ONLY
-
-insert into course ( ten_lop, ngay_bat_dau, ngay_ket_thuc, link_online)
-VALUES ( N'Angular 6', '2021-8-27', '2022-10-27', N'')
-INSERT INTO class( id_course, id_users, teacher)
-VALUES ( (select course.id from course where course.ten_lop = N'Angular 6' ORDER BY course.id DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY  ), 37, 1)
-
-select count(course.ten_lop) as so_luong_trung from course where ten_lop like '%angular%'	
+exec danh_sach_course
+@sql = ' and course.ten_lop like N''%Ma%'' ',
+@pagination = ' order by course.id offset 0*10 row fetch next 10 rows only '
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
