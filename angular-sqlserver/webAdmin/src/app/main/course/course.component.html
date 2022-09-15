@@ -71,7 +71,7 @@
             <ng-container matColumnDef="action" stickyEnd>
                 <th mat-header-cell *matHeaderCellDef class="action-col">Thao tác</th>
                 <td mat-cell *matCellDef="let element" class="action-col">
-                    <button mat-button color="primary" matTooltip="">
+                    <button mat-button color="primary" matTooltip="" (click)="show(element.id_course,element.ten_lop)">
                         <mat-icon>search</mat-icon>
                     </button>
                 </td>

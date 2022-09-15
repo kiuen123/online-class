@@ -26,6 +26,13 @@ export const mainRoutes: Routes = [
         loadChildren: () =>
           import('./course/course.module').then((m) => m.CourseModule),
       },
+      {
+        path: 'course/:id',
+        loadChildren: () =>
+          import('./details/course-detail/course-detail.module').then(
+            (m) => m.CourseDetailModule
+          ),
+      },
     ],
   },
 ];

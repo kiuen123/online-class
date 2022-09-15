@@ -21,12 +21,9 @@ namespace webAPI.Controllers
         {
             // query + connection
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
-            string query = "select course.id as id_course, course.ten_lop as ten_lop, " +
-                "course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc," +
-                "count(class.id_users) as so_thanh_vien " +
-                "from course,class " +
-                "where course.id = class.id_course " +
-                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc";
+            string query = "exec danh_sach_course " +
+                 " @sql = ''," +
+                 " @pagination =''";
 
             // log
             WriteLog writeLog = new WriteLog();
@@ -68,12 +65,9 @@ namespace webAPI.Controllers
         {
             // query + connection
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
-            string query = "select course.id as id_course, course.ten_lop as ten_lop, " +
-                "course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc," +
-                "users.ten as giao_vien, course.link_online as link_online, count(class.id_users) as so_thanh_vien " +
-                "from course,class,users " +
-                "where course.id = class.id_course " + " and class.id_users = users.id and course.id = " + id +
-                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten";
+            string query = "exec danh_sach_course " +
+                 " @sql = ' and course.id = " + id + " '," +
+                 " @pagination =' '";
 
             // log
             WriteLog writeLog = new WriteLog();
@@ -113,19 +107,31 @@ namespace webAPI.Controllers
         [HttpGet("SearchCourse")]
         public JsonResult SearchUser(string colum, string content, int CurentPage, int PageLength)
         {
+            String _sql = "";
             // convert colum to sql syntax
-            if (colum == "id") colum = "course.id";
-            if (colum == "ten_lop") colum = "course.ten_lop";
-            if (colum == "giao_vien") colum = "users.ten";
-
+            switch (colum) {
+                case "id":
+                    if (content == "%")
+                        _sql = "";
+                    else
+                        _sql = " and course.id =  " + content ;
+                break;
+                case "ten_lop":
+                    _sql = " and course.ten_lop like N''%" + content + "%''";
+                break;
+                case "giao_vien":
+                    _sql = " and users.ten like N''%" + content + "%''";
+                break;
+                default:
+                    _sql = " ";
+                break;
+            }
+                
             // query + connection
             String sqlDataSource = _configuration.GetConnectionString("kteachlab");
-            string query = "select course.id as id_course, course.ten_lop as ten_lop, course.ngay_bat_dau as ngay_bat_dau, course.ngay_ket_thuc as ngay_ket_thuc, " +
-                "users.ten as giao_vien, course.link_online as link_online, count(class.id_users) as so_thanh_vien " +
-                "from course,class,users " +
-                "where course.id = class.id_course and class.id_users = users.id and " + colum + " like '%" + content + "%' " +
-                "group by course.id, course.ten_lop, course.ngay_bat_dau, course.ngay_ket_thuc, course.link_online, users.ten " +
-                "ORDER BY course.id OFFSET " + CurentPage * PageLength + " ROWS FETCH NEXT " + PageLength + " ROWS ONLY";
+            string query = "exec danh_sach_course " +
+                " @sql = '" + _sql + " ',"+
+                " @pagination =' ORDER BY course.id OFFSET " + CurentPage * PageLength + " ROWS FETCH NEXT " + PageLength + " ROWS ONLY'";
             
             // log
             WriteLog writeLog = new WriteLog();

@@ -1,8 +1,8 @@
-.home-button {
+button {
   display: block;
   margin: 0 auto;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 a {
   text-decoration: none;
@@ -12,4 +12,26 @@ a {
   display: flex;
   align-items: baseline;
   width: 100%;
+}
+.class-icon {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  background-color: red;
+  color: white;
+}
+
+.class-name:hover {
+  animation: myfirst 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes myfirst {
+  to {
+    transform: translateX(-200%);
+  }
 }

@@ -12,6 +12,10 @@ import {
 } from '@angular/material/snack-bar';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
+import {
+  ClassListOpenedService,
+  ClassSection,
+} from '../../services/class-list-opened.service';
 
 // course list interface
 export interface CourseIntefce {
@@ -32,7 +36,9 @@ export interface CourseIntefce {
 export class CourseComponent implements OnInit {
   constructor(
     private CourseApiService: CourseApiService,
-    public dialog: MatDialog
+    private ClassListOpenedService: ClassListOpenedService,
+    public dialog: MatDialog,
+    private Router: Router
   ) {}
 
   // tên các cột
@@ -136,6 +142,16 @@ export class CourseComponent implements OnInit {
         this.pageSize
       );
     });
+  }
+
+  show(id: number, name: string) {
+    let addclass: ClassSection = {
+      id: id,
+      title: name,
+      url: './course/' + id,
+    };
+    this.ClassListOpenedService.add_class_section(addclass);
+    this.Router.navigate(['./main/course/' + id]);
   }
 }
 

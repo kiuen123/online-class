@@ -301,7 +301,6 @@ add constraint comment_users
 foreign key (id_users)
 references users(id)
 
-/* drop database kteachlab; */
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* procedure lấy danh sách lớp */
 go
@@ -321,7 +320,7 @@ begin
 	exec (@query)
 end
 
-drop proc danh_sach_lop
+/* drop proc danh_sach_lop */
 
 exec danh_sach_lop 
 @sql = ' and course.id = 1 ',
@@ -355,6 +354,6 @@ end
 /* drop proc danh_sach_course */
 
 exec danh_sach_course
-@sql = ' and course.ten_lop like N''%Ma%'' ',
-@pagination = ' order by course.id offset 0*10 row fetch next 10 rows only '
+@sql = '',
+@pagination = ''
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

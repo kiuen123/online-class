@@ -10,6 +10,7 @@ import { mainRoutes } from './main.routes';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [MainComponent, SidebarComponent],
   imports: [
