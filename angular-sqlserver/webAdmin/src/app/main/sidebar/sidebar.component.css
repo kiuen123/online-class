@@ -35,3 +35,7 @@ a {
     transform: translateX(-200%);
   }
 }
+
+mat-panel-description {
+  padding: 1rem;
+}

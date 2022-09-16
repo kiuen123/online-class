@@ -104,4 +104,24 @@ export class CourseApiService {
         })
       );
   }
+
+  getCourseById(id: number) {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink = '/api/Course/GetCourseById?id=' + id;
+    return this.http
+      .get(this.link + exlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          sessionStorage.setItem('coursebyid', JSON.stringify(res[0]));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  }
 }

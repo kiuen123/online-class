@@ -1,1 +1,17 @@
-<p>course-detail works! {{id}}</p>
+<div class="all">
+    <h1>Khóa học: {{course_detail.ten_lop}}</h1>
+    <p>Giáo viên: {{course_detail.giao_vien}}</p>
+    <hr>
+    <div>
+        <p>thời gian học: {{course_detail.ngay_bat_dau.split('T', 1)[0].split('-',3).reverse().join('-')}} ->
+            {{course_detail.ngay_ket_thuc.split('T', 1)[0].split('-',3).reverse().join('-')}}</p>
+        <button mat-button (click)='opentab(course_detail.link_online)'>
+            Link khóa học <mat-icon>arrow_forward</mat-icon>
+        </button>
+        <br>
+    </div>
+    <hr>
+    <div>
+        <p>Số thành viên: {{course_detail.so_thanh_vien}}</p>
+    </div>
+</div>

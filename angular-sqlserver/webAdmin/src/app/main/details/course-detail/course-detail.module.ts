@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CourseDetailComponent } from './course-detail.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 const routers: Routes = [{ path: '', component: CourseDetailComponent }];
 
 @NgModule({
   declarations: [CourseDetailComponent],
-  imports: [RouterModule.forChild(routers), CommonModule],
+  imports: [RouterModule.forChild(routers), CommonModule, MatIconModule],
 })
 export class CourseDetailModule {}

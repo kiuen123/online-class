@@ -104,6 +104,49 @@ namespace webAPI.Controllers
             }
         }
 
+        [HttpGet("getCourseUsersList")]
+        public JsonResult getCourseUsersList(int id, int CurentPage, int PageLength)
+        {
+            // query + connection
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            string query = "exec danh_sach_lop @sql = ' and course.id = "+ id+ " '," + 
+                " @pagination =' ORDER BY course.id OFFSET " + CurentPage * PageLength + " ROWS FETCH NEXT " + PageLength + " ROWS ONLY'";
+
+            // log
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+
+            // execute
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                SqlCommand nyCommand = new SqlCommand(query, myCon);
+
+                // res return
+                DataTable table = new DataTable();
+                string error_messages = "";
+
+                try
+                {
+                    myCon.Open();
+                    table.Load(nyCommand.ExecuteReader());
+                    return new JsonResult(table);
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        error_messages += ex.Errors[i].Message;
+                    }
+                    return new JsonResult("error_messages :" + error_messages);
+                }
+                catch (Exception ex)
+                {
+                    error_messages = ex.Message;
+                    return new JsonResult("error_messages :" + error_messages);
+                }
+            }
+        }
+
         [HttpGet("SearchCourse")]
         public JsonResult SearchUser(string colum, string content, int CurentPage, int PageLength)
         {

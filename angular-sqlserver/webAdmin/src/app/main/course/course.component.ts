@@ -15,7 +15,7 @@ import { FloatLabelType } from '@angular/material/form-field';
 import {
   ClassListOpenedService,
   ClassSection,
-} from '../../services/class-list-opened.service';
+} from '../services/class-list-opened.service';
 
 // course list interface
 export interface CourseIntefce {
@@ -151,6 +151,7 @@ export class CourseComponent implements OnInit {
       url: './course/' + id,
     };
     this.ClassListOpenedService.add_class_section(addclass);
+    sessionStorage.setItem('crcourseid', id.toString());
     this.Router.navigate(['./main/course/' + id]);
   }
 }
