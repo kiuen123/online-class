@@ -1,12 +1,6 @@
-.all-user {
-  width: 100%;
-  min-width: 800px;
-  overflow: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
+mat-card {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .action-col {
@@ -22,6 +16,11 @@ mat-form-field {
 .search-bar > mat-form-field ~ mat-form-field {
   width: 75%;
 }
-.app-user {
-  flex: 1;
+.all-user {
+  overflow: auto;
+}
+
+.all-user table {
+  width: 100%;
+  min-width: 800px;
 }

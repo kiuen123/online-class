@@ -321,7 +321,6 @@ begin
 end
 
 /* drop proc danh_sach_lop */
-
 exec danh_sach_lop 
 @sql = ' and course.id = 1 ',
 @pagination = ' order by course.id offset 0*10 row fetch next 10 rows only '

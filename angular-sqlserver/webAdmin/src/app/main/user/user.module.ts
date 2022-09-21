@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MaterialExampleModule } from '../../../material.module';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routers: Routes = [{ path: '', component: UserComponent }];
 @NgModule({
@@ -33,6 +34,7 @@ const routers: Routes = [{ path: '', component: UserComponent }];
     MatInputModule,
     MatSnackBarModule,
     MaterialExampleModule,
+    MatMenuModule,
   ],
 })
 export class UserModule {}

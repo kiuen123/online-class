@@ -3,3 +3,37 @@ button {
   align-items: center;
   padding: 0.5rem;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.all-user {
+  overflow: auto;
+}
+
+.all-user table {
+  width: 100%;
+  min-width: 800px;
+}
+
+mat-paginator {
+  width: 100%;
+}
+
+.action-col,
+table tr th,
+.action {
+  text-align: center;
+}
+.avatar {
+  width: 75px;
+  height: 75px;
+  border: 1px solid #000;
+}
+
+table button,
+table img {
+  margin: 0 auto;
+}

@@ -13,7 +13,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  user: any = JSON.parse(sessionStorage.getItem('user') || '{}');
+  user: any = JSON.parse(localStorage.getItem('user') || '{}');
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   constructor(
@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   logout() {
-    sessionStorage.removeItem('user');
+    localStorage.removeItem('user');
     this.user = '{}';
     this.router.navigate(['']);
   }

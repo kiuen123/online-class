@@ -53,7 +53,7 @@ export class CourseComponent implements OnInit {
     'action',
   ];
   courselist: CourseIntefce[] = JSON.parse(
-    sessionStorage.getItem('courselist') || '[]'
+    localStorage.getItem('courselist') || '[]'
   );
   coursepage: CourseIntefce[] = [];
 
@@ -77,9 +77,9 @@ export class CourseComponent implements OnInit {
   }
 
   getall() {
-    this.CourseApiService.getAllCourse().subscribe(() => {
-      this.courselist = JSON.parse(
-        sessionStorage.getItem('courselist') || '{}'
+    this.CourseApiService.getAllCourse().subscribe(async () => {
+      this.courselist = await JSON.parse(
+        localStorage.getItem('courselist') || '{}'
       );
       this.pagelength = this.courselist.length;
     });
@@ -116,9 +116,9 @@ export class CourseComponent implements OnInit {
       content,
       CurentPage,
       PageLength
-    ).subscribe(() => {
-      this.coursepage = JSON.parse(
-        sessionStorage.getItem('searchcourseresults') || '{}'
+    ).subscribe(async () => {
+      this.coursepage = await JSON.parse(
+        localStorage.getItem('searchcourseresults') || '{}'
       );
       this.dataSource = this.coursepage;
     });
@@ -151,7 +151,7 @@ export class CourseComponent implements OnInit {
       url: './course/' + id,
     };
     this.ClassListOpenedService.add_class_section(addclass);
-    sessionStorage.setItem('crcourseid', id.toString());
+    localStorage.setItem('crcourseid', id.toString());
     this.Router.navigate(['./main/course/' + id]);
   }
 }
@@ -232,8 +232,10 @@ export class CourseAdd {
   }
 
   getteacher() {
-    this.UserApiService.getAllTeacher().subscribe(() => {
-      this.options = JSON.parse(sessionStorage.getItem('teacherlist') || '{}');
+    this.UserApiService.getAllTeacher().subscribe(async () => {
+      this.options = await JSON.parse(
+        localStorage.getItem('teacherlist') || '{}'
+      );
     });
   }
 
@@ -241,7 +243,7 @@ export class CourseAdd {
   checkcoursename(coursename: any) {
     this.CourseApiService.checkCourseName(coursename).subscribe(() => {
       this.so_luong_trung = JSON.parse(
-        sessionStorage.getItem('coursenum') || '{}'
+        localStorage.getItem('coursenum') || '{}'
       );
       if (this.so_luong_trung[0].so_luong_trung > 0) {
         this.valid = false;

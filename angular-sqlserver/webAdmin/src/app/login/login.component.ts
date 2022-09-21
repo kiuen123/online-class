@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   hide = true;
   bar = 'hide';
   model: any = { ten_dang_nhap: '', mat_khau: '' };
-  user: any = JSON.parse(sessionStorage.getItem('user') || '{}');
+  user: any = JSON.parse(localStorage.getItem('user') || '{}');
 
   ngOnInit(): void {}
 
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       mat_khau: this.model.mat_khau,
     };
     this.UserApiService.checkLogin(data).subscribe(() => {
-      this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
+      this.user = JSON.parse(localStorage.getItem('user') || '{}');
       if (this.user.length == 0) {
         // không đăng nhập được
         this.openSnackBar('Tên đăng nhập hoặc mật khẩu không đúng', 'Đóng');

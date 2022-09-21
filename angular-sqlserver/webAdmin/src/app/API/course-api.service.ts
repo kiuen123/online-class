@@ -22,7 +22,7 @@ export class CourseApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('courselist', JSON.stringify(res));
+          localStorage.setItem('courselist', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -55,7 +55,7 @@ export class CourseApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('searchcourseresults', JSON.stringify(res));
+          localStorage.setItem('searchcourseresults', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -76,8 +76,8 @@ export class CourseApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('coursenum', JSON.stringify(res));
-          console.log(sessionStorage.getItem('coursenum'));
+          localStorage.setItem('coursenum', JSON.stringify(res));
+          console.log(localStorage.getItem('coursenum'));
           return res;
         }),
         catchError((err) => {
@@ -116,7 +116,33 @@ export class CourseApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('coursebyid', JSON.stringify(res[0]));
+          localStorage.setItem('coursebyid', JSON.stringify(res[0]));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  }
+
+  getcourseuser(id: number, page: number, length: number) {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink =
+      '/api/Course/getCourseUsersList?id=' +
+      id +
+      '&CurentPage=' +
+      page +
+      '&PageLength=' +
+      length;
+    return this.http
+      .get(this.link + exlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          localStorage.setItem('courseuserlist', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {

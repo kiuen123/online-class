@@ -21,7 +21,7 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('user', JSON.stringify(res));
+          localStorage.setItem('user', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -41,7 +41,7 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('userlist', JSON.stringify(res));
+          localStorage.setItem('userlist', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -61,7 +61,7 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('teacherlist', JSON.stringify(res));
+          localStorage.setItem('teacherlist', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -81,7 +81,7 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('cruser', JSON.stringify(res));
+          localStorage.setItem('cruser', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
@@ -209,12 +209,28 @@ export class UserApiService {
       })
       .pipe(
         map((res: any) => {
-          sessionStorage.setItem('searchuserresults', JSON.stringify(res));
+          localStorage.setItem('searchuserresults', JSON.stringify(res));
           return res;
         }),
         catchError((err) => {
           return err;
         })
       );
+  };
+
+  getviewUserbyId = (id: any) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink = '/api/User/GetUserbyId?id=' + id;
+    return this.http.get(this.link + exlink, { headers: headers }).pipe(
+      map((res: any) => {
+        localStorage.setItem('userbyid', JSON.stringify(res));
+        return res;
+      }),
+      catchError((err) => {
+        return err;
+      })
+    );
   };
 }

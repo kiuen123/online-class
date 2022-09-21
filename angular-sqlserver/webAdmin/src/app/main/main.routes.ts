@@ -22,6 +22,13 @@ export const mainRoutes: Routes = [
           import('./user/user.module').then((m) => m.UserModule),
       },
       {
+        path: 'user/:id',
+        loadChildren: () =>
+          import('./details/user-detail/user-detail.module').then(
+            (m) => m.UserDetailModule
+          ),
+      },
+      {
         path: 'course',
         loadChildren: () =>
           import('./course/course.module').then((m) => m.CourseModule),

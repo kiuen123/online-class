@@ -11,7 +11,8 @@ import {
 } from '@angular/material/snack-bar';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
-
+import { UserSection } from '../services/user-list-opened.service';
+import { UserListOpenedService } from '../services/user-list-opened.service';
 // user list interface
 export interface UserIntefce {
   id?: string;
@@ -30,7 +31,9 @@ export interface UserIntefce {
 export class UserComponent implements OnInit {
   constructor(
     private UserApiService: UserApiService,
-    public dialog: MatDialog
+    private UserListOpenedService: UserListOpenedService,
+    public dialog: MatDialog,
+    private Router: Router
   ) {}
 
   // tên các cột
@@ -43,7 +46,7 @@ export class UserComponent implements OnInit {
     'action',
   ];
   userlist: UserIntefce[] = JSON.parse(
-    sessionStorage.getItem('userlist') || '[]'
+    localStorage.getItem('userlist') || '[]'
   );
   userpage: UserIntefce[] = [];
 
@@ -67,8 +70,10 @@ export class UserComponent implements OnInit {
   }
 
   getall() {
-    this.UserApiService.getAllUser().subscribe(() => {
-      this.userlist = JSON.parse(sessionStorage.getItem('userlist') || '{}');
+    this.UserApiService.getAllUser().subscribe(async () => {
+      this.userlist = await JSON.parse(
+        localStorage.getItem('userlist') || '{}'
+      );
       this.pagelength = this.userlist.length;
     });
   }
@@ -126,6 +131,17 @@ export class UserComponent implements OnInit {
     });
   }
 
+  show(id: number, name: string) {
+    let addclass: UserSection = {
+      id: id,
+      title: name,
+      url: './user/' + id,
+    };
+    this.UserListOpenedService.add_user_section(addclass);
+    localStorage.setItem('cruserid', id.toString());
+    this.Router.navigate(['./main/user/' + id]);
+  }
+
   // search
   options = ['id', 'ten', 'email', 'vai_tro', 'tom_tat'];
   searchof: string = this.options[0];
@@ -144,9 +160,9 @@ export class UserComponent implements OnInit {
       content,
       CurentPage,
       PageLength
-    ).subscribe(() => {
-      this.userpage = JSON.parse(
-        sessionStorage.getItem('searchuserresults') || '{}'
+    ).subscribe(async () => {
+      this.userpage = await JSON.parse(
+        localStorage.getItem('searchuserresults') || '{}'
       );
       this.dataSource = this.userpage;
     });

@@ -1,17 +1,66 @@
-<div class="all">
+<mat-card>
     <h1>Khóa học: {{course_detail.ten_lop}}</h1>
     <p>Giáo viên: {{course_detail.giao_vien}}</p>
     <hr>
     <div>
-        <p>thời gian học: {{course_detail.ngay_bat_dau.split('T', 1)[0].split('-',3).reverse().join('-')}} ->
-            {{course_detail.ngay_ket_thuc.split('T', 1)[0].split('-',3).reverse().join('-')}}</p>
+        <p>thời gian học: {{dateformat(course_detail.ngay_bat_dau)}} ->
+            {{dateformat(course_detail.ngay_ket_thuc)}}</p>
         <button mat-button (click)='opentab(course_detail.link_online)'>
             Link khóa học <mat-icon>arrow_forward</mat-icon>
         </button>
         <br>
     </div>
     <hr>
-    <div>
-        <p>Số thành viên: {{course_detail.so_thanh_vien}}</p>
+    <p>Số thành viên: {{course_detail.so_thanh_vien}}</p>
+    <div class="all-user">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="ten">
+                <th mat-header-cell *matHeaderCellDef>Tên</th>
+                <td mat-cell *matCellDef="let element">{{ element.ten }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>email</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.email}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="anh_dai_dien">
+                <th mat-header-cell *matHeaderCellDef>Ảnh đại diện</th>
+                <td mat-cell *matCellDef="let element" class="action">
+                    <img src={{element.anh_dai_dien}} alt="" class="avatar">
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="vai_tro">
+                <th mat-header-cell *matHeaderCellDef>Vai trò</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.vai_tro}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="giao_vien">
+                <th mat-header-cell *matHeaderCellDef>Giáo viên</th>
+                <td mat-cell *matCellDef="let element" class="action-col">
+                    <mat-checkbox class="example-margin" [disabled]="true" [checked]="element.teacher"></mat-checkbox>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef class="action-col">Thao tác</th>
+                <td mat-cell *matCellDef="let element" class="action-col">
+                    <button mat-button color="primary" matTooltip="">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
     </div>
-</div>
+    <mat-paginator length="{{ pagelength }}" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        [pageIndex]="curentPage" aria-label="Select page" (page)="onChangePage($event)" showFirstLastButtons>
+    </mat-paginator>
+</mat-card>

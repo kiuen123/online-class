@@ -2,7 +2,10 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
+mat-card {
+  max-width: 100%;
+  overflow: hidden;
+}
 mat-form-field {
   width: 100%;
 }
@@ -16,10 +19,14 @@ mat-form-field {
 .action-col {
   text-align: center;
 }
+
 .all-user {
+  overflow: auto;
+}
+
+.all-user table {
   width: 100%;
   min-width: 800px;
-  overflow: auto;
 }
 
 mat-paginator {

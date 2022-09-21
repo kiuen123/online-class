@@ -12,18 +12,37 @@
   </mat-list-item>
 </mat-list>
 <hr>
+<!-- class opened list -->
 <mat-accordion>
-  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel [expanded]="true" hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-description>
-        <mat-icon>list_alt</mat-icon> <span [matBadge]="classnum" matBadgeOverlap="false">Class list</span>
+        <mat-icon>list_alt</mat-icon> <span [matBadge]="classnum" matBadgeOverlap="false">Class list </span>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <section *ngFor="let class of class_list_opened">
       <button style="overflow: hidden;" mat-button class="listitem class-icon" routerLink="{{ class.url }}"
         (click)="changecourse(class.id)">
         <p style="margin: 0; max-width: 125px; " class="class-name">{{ class.title }}</p>
-        <mat-icon class="close" (click)="close(class.id)">close</mat-icon>
+        <mat-icon class="close" (click)="closecourse(class.id)">close</mat-icon>
+      </button>
+    </section>
+  </mat-expansion-panel>
+</mat-accordion>
+<hr>
+<!-- users opened list -->
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true" hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        <mat-icon>list_alt</mat-icon> <span [matBadge]="usernum" matBadgeOverlap="false">Users list </span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <section *ngFor="let user of user_list_opened">
+      <button style="overflow: hidden;" mat-button class="listitem class-icon" routerLink="{{ user.url }}"
+        (click)="changeuser(user.id)">
+        <p style="margin: 0; max-width: 125px; " class="class-name">{{ user.title }}</p>
+        <mat-icon class="close" (click)="closeuser(user.id)">close</mat-icon>
       </button>
     </section>
   </mat-expansion-panel>
