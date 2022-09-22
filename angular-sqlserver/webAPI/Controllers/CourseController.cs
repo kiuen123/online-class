@@ -294,5 +294,48 @@ namespace webAPI.Controllers
                 }
             }
         }
+
+
+        [HttpGet("getCourseLearnTime")]
+        public JsonResult getCourseLearnTime(int courseid)
+        {
+            // query + connection
+            String sqlDataSource = _configuration.GetConnectionString("kteachlab");
+            string query = "select * from learntime where id_course="+courseid;
+
+            // log
+            WriteLog writeLog = new WriteLog();
+            writeLog.wirte(query);
+
+            // execute
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                SqlCommand nyCommand = new SqlCommand(query, myCon);
+
+                // res return
+                DataTable table = new DataTable();
+                string error_messages = "";
+
+                try
+                {
+                    myCon.Open();
+                    table.Load(nyCommand.ExecuteReader());
+                    return new JsonResult(table);
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        error_messages += ex.Errors[i].Message;
+                    }
+                    return new JsonResult("error_messages :" + error_messages);
+                }
+                catch (Exception ex)
+                {
+                    error_messages = ex.Message;
+                    return new JsonResult("error_messages :" + error_messages);
+                }
+            }
+        }
     }
 }

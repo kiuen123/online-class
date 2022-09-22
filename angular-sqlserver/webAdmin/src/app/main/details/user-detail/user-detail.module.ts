@@ -9,6 +9,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MaterialExampleModule } from '../../../../material.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { UserDetailComponent } from './user-detail.component';
+import { NgProgressModule } from 'ngx-progressbar';
+import { NgProgressHttpModule } from 'ngx-progressbar/http';
 
 const routers: Routes = [{ path: '', component: UserDetailComponent }];
 
@@ -23,6 +25,8 @@ const routers: Routes = [{ path: '', component: UserDetailComponent }];
     MatPaginatorModule,
     MatCheckboxModule,
     MaterialExampleModule,
+    NgProgressModule.withConfig({ spinnerPosition: 'right', color: '#red' }),
+    NgProgressHttpModule,
   ],
 })
 export class UserDetailModule {}

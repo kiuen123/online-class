@@ -7,6 +7,7 @@ import { UserApiService } from '../../../API/user-api.service';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  progress_status = '';
   id: number = JSON.parse(localStorage.getItem('cruserid') || '0');
   user: any = {};
   constructor(private router: Router, private UserApiService: UserApiService) {
@@ -18,10 +19,14 @@ export class UserDetailComponent implements OnInit {
           this.user = await JSON.parse(
             localStorage.getItem('userbyid') || '{}'
           )[0];
+
+          this.progress_status = 'complete';
         });
       }
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.progress_status = 'start';
+  }
 }

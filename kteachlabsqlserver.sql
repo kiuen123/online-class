@@ -312,7 +312,7 @@ create procedure danh_sach_lop
 as
 begin
 	declare @query nvarchar(1000) 
-	set @query = 'select users.ten, users.email, users.anh_dai_dien, users.vai_tro, class.teacher 
+	set @query = 'select users.id, users.ten, users.email, users.anh_dai_dien, users.vai_tro, class.teacher 
 	from course, users, class 
 	where course.id = class.id_course and users.id = class.id_users '
 	+ @sql

@@ -28,8 +28,9 @@ table tr th,
   text-align: center;
 }
 .avatar {
-  width: 75px;
-  height: 75px;
+  min-width: 75px;
+  min-height: 75px;
+  max-height: 75px;
   border: 1px solid #000;
 }
 

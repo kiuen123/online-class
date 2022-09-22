@@ -1,4 +1,8 @@
+<ng-progress #progressBar color="red" (started)="progress_status=='start'" (completed)="progress_status == 'complete'">
+</ng-progress>
 <mat-card>
+  <mat-card-title>Danh sách người dùng</mat-card-title>
+  <hr>
   <div>
     <button mat-button color="primary" matTooltip="" (click)="adduser()">
       <mat-icon>person_add</mat-icon>

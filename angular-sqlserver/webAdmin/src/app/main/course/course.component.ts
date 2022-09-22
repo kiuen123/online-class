@@ -34,6 +34,8 @@ export interface CourseIntefce {
   styleUrls: ['./course.component.css'],
 })
 export class CourseComponent implements OnInit {
+  progress_status = '';
+
   constructor(
     private CourseApiService: CourseApiService,
     private ClassListOpenedService: ClassListOpenedService,
@@ -66,9 +68,9 @@ export class CourseComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageSize = this.pageSizeOptions[1];
 
-  ngOnInit(): void {
-    this.getall();
-    this.searchCourse(
+  async ngOnInit(): Promise<void> {
+    await this.getall();
+    await this.searchCourse(
       this.searchof,
       this.content,
       this.curentPage,
@@ -77,6 +79,7 @@ export class CourseComponent implements OnInit {
   }
 
   getall() {
+    this.progress_status = 'start';
     this.CourseApiService.getAllCourse().subscribe(async () => {
       this.courselist = await JSON.parse(
         localStorage.getItem('courselist') || '{}'
@@ -121,6 +124,8 @@ export class CourseComponent implements OnInit {
         localStorage.getItem('searchcourseresults') || '{}'
       );
       this.dataSource = this.coursepage;
+
+      this.progress_status = 'complete';
     });
   }
 

@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MaterialExampleModule } from '../../../material.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { NgProgressModule } from 'ngx-progressbar';
+import { NgProgressHttpModule } from 'ngx-progressbar/http';
 
 const routers: Routes = [{ path: '', component: UserComponent }];
 @NgModule({
@@ -35,6 +37,8 @@ const routers: Routes = [{ path: '', component: UserComponent }];
     MatSnackBarModule,
     MaterialExampleModule,
     MatMenuModule,
+    NgProgressModule.withConfig({ spinnerPosition: 'right', color: '#red' }),
+    NgProgressHttpModule,
   ],
 })
 export class UserModule {}

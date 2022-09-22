@@ -150,4 +150,24 @@ export class CourseApiService {
         })
       );
   }
+
+  getCourseLearnTime = (id: number) => {
+    let headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+    const exlink = '/api/Course/getCourseLearnTime?courseid=' + id;
+    return this.http
+      .get(this.link + exlink, {
+        headers: headers,
+      })
+      .pipe(
+        map((res: any) => {
+          localStorage.setItem('courselearntime', JSON.stringify(res));
+          return res;
+        }),
+        catchError((err) => {
+          return err;
+        })
+      );
+  };
 }

@@ -1,5 +1,8 @@
-<ng-progress #progressBar color="red"></ng-progress>
+<ng-progress #progressBar color="red" (started)="progress_status=='start'" (completed)="progress_status == 'complete'">
+</ng-progress>
 <mat-card>
+    <mat-card-title>Danh sách khóa học</mat-card-title>
+    <hr>
     <div>
         <button mat-button color="primary" matTooltip="" (click)="addcourse()">
             <mat-icon>create_new_folder</mat-icon>

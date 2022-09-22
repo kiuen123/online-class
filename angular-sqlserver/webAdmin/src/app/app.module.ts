@@ -9,6 +9,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import { NgProgressHttpModule } from "ngx-progressbar/http";
+import { NgProgressModule } from "ngx-progressbar";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,11 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatFormFieldModule,
     MatRadioModule,
+    NgProgressModule.withConfig({
+      spinnerPosition: "left",
+      color: "#f71cff"
+    }),
+    NgProgressHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent],

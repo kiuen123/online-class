@@ -29,6 +29,8 @@ export interface UserIntefce {
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
+  progress_status = '';
+
   constructor(
     private UserApiService: UserApiService,
     private UserListOpenedService: UserListOpenedService,
@@ -59,9 +61,9 @@ export class UserComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageSize = this.pageSizeOptions[1];
 
-  ngOnInit(): void {
-    this.getall();
-    this.searchUser(
+  async ngOnInit(): Promise<void> {
+    await this.getall();
+    await this.searchUser(
       this.searchof,
       this.content,
       this.curentPage,
@@ -70,6 +72,7 @@ export class UserComponent implements OnInit {
   }
 
   getall() {
+    this.progress_status = 'start';
     this.UserApiService.getAllUser().subscribe(async () => {
       this.userlist = await JSON.parse(
         localStorage.getItem('userlist') || '{}'
@@ -165,6 +168,8 @@ export class UserComponent implements OnInit {
         localStorage.getItem('searchuserresults') || '{}'
       );
       this.dataSource = this.userpage;
+
+      this.progress_status = 'complete';
     });
   }
 }
@@ -187,6 +192,18 @@ export class UserUpdate {
 
   ngOnInit(): void {}
 
+  onSelectFile(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (event: any) => {
+        this.cruser.anh_dai_dien = event.target.result;
+      };
+    }
+  }
+
   onNoClick(): void {
     this.openSnackBar('Hủy chỉnh sửa', 'Đóng');
     this.dialogRef.close();
@@ -196,7 +213,7 @@ export class UserUpdate {
     this.UserApiService.updateUser(this.cruser).subscribe((res: any) => {
       const message = res.split(':')[0];
       const rows_affected = res.split(':')[1];
-      if (message == 'rows_affected' && rows_affected > 0) {
+      if (message == 'rows_affected ' && rows_affected > 0) {
         this.openSnackBar('Chỉnh sửa thông tin thành công', 'Đóng');
         this.dialogRef.close();
       } else this.openSnackBar(res, 'Đóng');

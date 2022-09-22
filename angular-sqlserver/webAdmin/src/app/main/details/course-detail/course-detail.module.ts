@@ -9,6 +9,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MaterialExampleModule } from '../../../../material.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgProgressModule } from 'ngx-progressbar';
+import { NgProgressHttpModule } from 'ngx-progressbar/http';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const routers: Routes = [{ path: '', component: CourseDetailComponent }];
 
@@ -23,6 +26,9 @@ const routers: Routes = [{ path: '', component: CourseDetailComponent }];
     MatPaginatorModule,
     MatCheckboxModule,
     MaterialExampleModule,
+    MatTabsModule,
+    NgProgressModule.withConfig({ spinnerPosition: 'right', color: '#red' }),
+    NgProgressHttpModule,
   ],
 })
 export class CourseDetailModule {}

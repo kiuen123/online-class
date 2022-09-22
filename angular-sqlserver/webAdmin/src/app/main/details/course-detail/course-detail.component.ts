@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, Event, NavigationEnd } from '@angular/router';
 import { CourseApiService } from '../../../API/course-api.service';
-import { ClassListOpenedService } from '../../../main/services/class-list-opened.service';
+import { UserListOpenedService } from '../../../main/services/user-list-opened.service';
+import { UserSection } from '../../services/user-list-opened.service';
 
 // course list interface
 export interface CourseUserIntefce {
@@ -19,10 +20,11 @@ export interface CourseUserIntefce {
   styleUrls: ['./course-detail.component.css'],
 })
 export class CourseDetailComponent implements OnInit {
-  course_detail: any = [];
-  coursepage: CourseUserIntefce[] = [];
+  progress_status = '';
   id: number = JSON.parse(localStorage.getItem('crcourseid') || '0');
 
+  course_detail: any = [];
+  coursepage: CourseUserIntefce[] = [];
   // tên các cột
   displayedColumns: string[] = [
     'ten',
@@ -32,6 +34,10 @@ export class CourseDetailComponent implements OnInit {
     'giao_vien',
     'action',
   ];
+  // data của bảng 1
+  dataSource = this.coursepage;
+
+  learntime: any = [];
 
   // thông tin của page
   curentPage = 0;
@@ -39,14 +45,12 @@ export class CourseDetailComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageSize = this.pageSizeOptions[1];
 
-  // data của bảng
-  dataSource = this.coursepage;
-
   constructor(
     private CourseApiService: CourseApiService,
-    private router: Router
+    private UserListOpenedService: UserListOpenedService,
+    private Router: Router
   ) {
-    this.router.events.subscribe((event: Event) => {
+    this.Router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         // thông tin lớp
         this.id = JSON.parse(localStorage.getItem('crcourseid') || '0');
@@ -55,18 +59,15 @@ export class CourseDetailComponent implements OnInit {
             localStorage.getItem('coursebyid') || '{}'
           );
         });
+        this.CourseApiService.getCourseLearnTime(this.id).subscribe(
+          async () => {
+            this.learntime = await JSON.parse(
+              localStorage.getItem('courselearntime') || '{}'
+            );
+          }
+        );
 
         // danh sách lớp
-        this.CourseApiService.getcourseuser(
-          this.id,
-          this.curentPage,
-          this.pageSize
-        ).subscribe(async () => {
-          this.coursepage = await JSON.parse(
-            localStorage.getItem('courseuserlist') || '{}'
-          );
-          this.dataSource = this.coursepage;
-        });
         this.CourseApiService.getcourseuser(
           this.id,
           this.curentPage,
@@ -76,11 +77,31 @@ export class CourseDetailComponent implements OnInit {
             localStorage.getItem('courseuserlist') || '{}'
           ).length;
         });
+        this.CourseApiService.getcourseuser(
+          this.id,
+          this.curentPage,
+          this.pageSize
+        ).subscribe(async () => {
+          this.coursepage = await JSON.parse(
+            localStorage.getItem('courseuserlist') || '{}'
+          );
+          this.dataSource = this.coursepage;
+
+          this.progress_status = 'complete';
+        });
+
+        // các bài viết của lớp
+
+        // các tài kiệu của lớp
+
+        // các bài kiểm tra của lớp
       }
     });
   }
 
-  ngOnInit(): void {}
+  async ngOnInit(): Promise<void> {
+    this.progress_status = 'start';
+  }
 
   dateformat(date: string): string {
     if (date === undefined) return '';
@@ -96,5 +117,16 @@ export class CourseDetailComponent implements OnInit {
   onChangePage(pe: PageEvent) {
     this.curentPage = pe.pageIndex;
     this.pageSize = pe.pageSize;
+  }
+
+  show(id: number, name: string) {
+    let addclass: UserSection = {
+      id: id,
+      title: name,
+      url: './user/' + id,
+    };
+    this.UserListOpenedService.add_user_section(addclass);
+    localStorage.setItem('cruserid', id.toString());
+    this.Router.navigate(['./main/user/' + id]);
   }
 }
