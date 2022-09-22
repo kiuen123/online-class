@@ -22158,3 +22158,13 @@ select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' 
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id = 1
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id = 1
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id = 1
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id = 1
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'

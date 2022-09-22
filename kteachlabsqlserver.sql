@@ -164,6 +164,9 @@ add constraint learntime_course
 foreign key (id_course)
 references course(id)
 
+INSERT INTO learntime( id_course, weekend_day, start_time,end_time)
+VALUES (1,3,'08:30:00','10:00:00')
+
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*mã điểm danh*/
 CREATE TABLE checkcode
@@ -356,3 +359,4 @@ exec danh_sach_course
 @sql = '',
 @pagination = ''
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+select * from learntime where id_course=1
