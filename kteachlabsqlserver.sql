@@ -14,7 +14,9 @@ CREATE TABLE users
   ten nvarchar(255) NOT NULL,
   vai_tro varchar(255) NOT NULL,
   anh_dai_dien ntext NOT NULL,
-  tom_tat ntext NOT NULL
+  tom_tat ntext NOT NULL,
+  create_at datetime not null,
+  update_at datetime not null
 )
 
 go
@@ -78,7 +80,9 @@ CREATE TABLE course
   ten_lop nvarchar(255) NOT NULL,
   ngay_bat_dau date NOT NULL,
   ngay_ket_thuc date NOT NULL,
-  link_online nvarchar(255) NOT NULL
+  link_online nvarchar(255) NOT NULL,
+  create_at datetime not null,
+  update_at datetime not null
 )
 
 INSERT INTO course
@@ -270,7 +274,9 @@ CREATE TABLE post
   id_course int NOT NULL,
   title varchar(255) NOT NULL,
   content ntext NOT NULL,
-  ngaygio_dang datetime NOT NULL
+  ngaygio_dang datetime NOT NULL,
+  create_at datetime not null,
+  update_at datetime not null
 )
 
 alter table post
@@ -291,7 +297,9 @@ CREATE TABLE comment
   id_post int NOT NULL,
   id_users int NOT NULL,
   content ntext NOT NULL,
-  ngay_dang datetime NOT NULL
+  ngay_dang datetime NOT NULL,
+  create_at datetime not null,
+  update_at datetime not null
 )
 
 alter table comment
@@ -360,3 +368,5 @@ exec danh_sach_course
 @pagination = ''
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 select * from learntime where id_course=1
+
+select * from post where id_course=1

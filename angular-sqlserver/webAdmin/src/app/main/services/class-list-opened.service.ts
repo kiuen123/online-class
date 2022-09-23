@@ -12,9 +12,13 @@ export interface ClassSection {
 export class ClassListOpenedService {
   constructor() {}
   class_list_opened: ClassSection[] = [];
+  id_list: number[] = [];
 
   add_class_section(section: ClassSection): void {
-    this.class_list_opened.unshift(section);
+    if (!this.id_list.includes(section.id)) {
+      this.class_list_opened.unshift(section);
+      this.id_list.unshift(section.id);
+    }
   }
 
   get_class_section(): ClassSection[] {

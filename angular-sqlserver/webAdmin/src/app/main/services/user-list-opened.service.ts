@@ -13,9 +13,12 @@ export class UserListOpenedService {
   constructor() {}
 
   user_list_opened: UserSection[] = [];
-
+  id_list: number[] = [];
   add_user_section(section: UserSection): void {
-    this.user_list_opened.unshift(section);
+    if (!this.id_list.includes(section.id)) {
+      this.user_list_opened.unshift(section);
+      this.id_list.unshift(section.id);
+    }
   }
 
   get_user_section(): UserSection[] {

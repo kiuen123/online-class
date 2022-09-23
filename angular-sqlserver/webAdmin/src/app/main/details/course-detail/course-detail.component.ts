@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, Event, NavigationEnd } from '@angular/router';
+import { async } from 'rxjs';
 import { CourseApiService } from '../../../API/course-api.service';
 import { UserListOpenedService } from '../../../main/services/user-list-opened.service';
 import { UserSection } from '../../services/user-list-opened.service';
@@ -50,57 +51,73 @@ export class CourseDetailComponent implements OnInit {
     private UserListOpenedService: UserListOpenedService,
     private Router: Router
   ) {
-    this.Router.events.subscribe((event: Event) => {
+    this.Router.events.subscribe(async (event: Event) => {
       if (event instanceof NavigationEnd) {
-        // thông tin lớp
-        this.id = JSON.parse(localStorage.getItem('crcourseid') || '0');
-        this.CourseApiService.getCourseById(this.id).subscribe(async () => {
-          this.course_detail = await JSON.parse(
-            localStorage.getItem('coursebyid') || '{}'
-          );
-        });
-        this.CourseApiService.getCourseLearnTime(this.id).subscribe(
-          async () => {
-            this.learntime = await JSON.parse(
-              localStorage.getItem('courselearntime') || '{}'
-            );
-          }
-        );
+        await this.classinfo();
+        await this.classlist();
+        await this.classpost();
+        await this.classstore();
+        await this.classtest();
 
-        // danh sách lớp
-        this.CourseApiService.getcourseuser(
-          this.id,
-          this.curentPage,
-          100000000
-        ).subscribe(async () => {
-          this.pagelength = await JSON.parse(
-            localStorage.getItem('courseuserlist') || '{}'
-          ).length;
-        });
-        this.CourseApiService.getcourseuser(
-          this.id,
-          this.curentPage,
-          this.pageSize
-        ).subscribe(async () => {
-          this.coursepage = await JSON.parse(
-            localStorage.getItem('courseuserlist') || '{}'
-          );
-          this.dataSource = this.coursepage;
-
-          this.progress_status = 'complete';
-        });
-
-        // các bài viết của lớp
-
-        // các tài kiệu của lớp
-
-        // các bài kiểm tra của lớp
+        this.progress_status = 'complete';
       }
     });
   }
-
+  
   async ngOnInit(): Promise<void> {
     this.progress_status = 'start';
+  }
+
+  async classinfo() {
+    // thông tin lớp
+    this.id = JSON.parse(localStorage.getItem('crcourseid') || '0');
+    await this.CourseApiService.getCourseById(this.id).subscribe(async () => {
+      this.course_detail = await JSON.parse(
+        localStorage.getItem('coursebyid') || '{}'
+      );
+    });
+    await this.CourseApiService.getCourseLearnTime(this.id).subscribe(
+      async () => {
+        this.learntime = await JSON.parse(
+          localStorage.getItem('courselearntime') || '{}'
+        );
+      }
+    );
+  }
+
+  async classlist() {
+    // danh sách lớp
+    await this.CourseApiService.getcourseuser(
+      this.id,
+      this.curentPage,
+      100000000
+    ).subscribe(async () => {
+      this.pagelength = await JSON.parse(
+        localStorage.getItem('courseuserlist') || '{}'
+      ).length;
+    });
+    await this.CourseApiService.getcourseuser(
+      this.id,
+      this.curentPage,
+      this.pageSize
+    ).subscribe(async () => {
+      this.coursepage = await JSON.parse(
+        localStorage.getItem('courseuserlist') || '{}'
+      );
+      this.dataSource = this.coursepage;
+    });
+  }
+
+  async classpost() {
+    // các bài viết của lớp
+  }
+
+  async classstore() {
+    // các tài kiệu của lớp
+  }
+
+  async classtest() {
+    // các bài kiểm tra của lớp
   }
 
   dateformat(date: string): string {
@@ -119,13 +136,13 @@ export class CourseDetailComponent implements OnInit {
     this.pageSize = pe.pageSize;
   }
 
-  show(id: number, name: string) {
-    let addclass: UserSection = {
+  showuser(id: number, name: string) {
+    let adduser: UserSection = {
       id: id,
       title: name,
       url: './user/' + id,
     };
-    this.UserListOpenedService.add_user_section(addclass);
+    this.UserListOpenedService.add_user_section(adduser);
     localStorage.setItem('cruserid', id.toString());
     this.Router.navigate(['./main/user/' + id]);
   }

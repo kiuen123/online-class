@@ -1,6 +1,5 @@
 {
 	"recommendations": [
-		"msjsdiag.debugger-for-chrome",
 		"formulahendry.auto-complete-tag",
 		"steoates.autoimport",
 		"naumovs.color-highlight",
@@ -8,7 +7,6 @@
 		"oderwat.indent-rainbow",
 		"mutantdino.resourcemonitor",
 		"coenraads.bracket-pair-colorizer",
-		"auchenberg.vscode-browser-preview",
 		"formulahendry.auto-close-tag",
 		"formulahendry.auto-rename-tag",
 		"dbaeumer.vscode-eslint",
@@ -16,7 +14,6 @@
 		"github.copilot",
 		"zignd.html-css-class-completion",
 		"ms-vscode.vscode-typescript-next",
-		"wholroyd.jinja",
 		"ritwickdey.liveserver",
 		"ms-vsliveshare.vsliveshare",
 		"ms-vsliveshare.vsliveshare-audio",
