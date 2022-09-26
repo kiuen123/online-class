@@ -38,3 +38,6 @@ table button,
 table img {
   margin: 0 auto;
 }
+.NgxEditor__Wrapper {
+  min-height: 250px;
+}

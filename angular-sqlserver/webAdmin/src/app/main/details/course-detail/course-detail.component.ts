@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, Event, NavigationEnd } from '@angular/router';
-import { async } from 'rxjs';
 import { CourseApiService } from '../../../API/course-api.service';
+import { Post, PostApiService } from '../../../API/post-api.service';
 import { UserListOpenedService } from '../../../main/services/user-list-opened.service';
 import { UserSection } from '../../services/user-list-opened.service';
-
+import { schema } from 'ngx-editor/schema';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { Validators, Editor, Toolbar } from 'ngx-editor';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 // course list interface
 export interface CourseUserIntefce {
   ten?: string;
@@ -49,7 +57,10 @@ export class CourseDetailComponent implements OnInit {
   constructor(
     private CourseApiService: CourseApiService,
     private UserListOpenedService: UserListOpenedService,
-    private Router: Router
+    private PostApiService: PostApiService,
+    private Router: Router,
+    private _snackBar: MatSnackBar,
+    private DomSanitizer: DomSanitizer
   ) {
     this.Router.events.subscribe(async (event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -63,8 +74,49 @@ export class CourseDetailComponent implements OnInit {
       }
     });
   }
-  
+
+  editor!: Editor;
+
+  toolbar: Toolbar = [
+    ['bold', 'italic', 'underline'],
+    ['code', 'blockquote'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ];
+  form = new FormGroup({
+    editorContent: new FormControl({ value: '', disabled: false }),
+  });
+
+  cruser: any = JSON.parse(localStorage.getItem('user') || '0');
+  post: Post = {
+    title: '',
+  };
+  addcontent() {
+    this.post.id_tacgia = this.cruser[0].id;
+    this.post.id_course = this.id;
+    this.post.content = this.form.value.editorContent!.toString();
+    this.post.title = this.post.title;
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    this.post.created_at = yyyy + '/' + mm + '/' + dd;
+    this.post.update_at = yyyy + '/' + mm + '/' + dd;
+
+    this.PostApiService.AddPost(this.post).subscribe((res: any) => {
+      const message = res.split(':')[0];
+      const rows_affected = res.split(':')[1];
+      if (message == 'rows_affected ' && rows_affected > 0) {
+        this.openSnackBar('Thêm bài viết thành công', 'Đóng');
+        this.classpost();
+      } else this.openSnackBar(res, 'Đóng');
+    });
+  }
+
   async ngOnInit(): Promise<void> {
+    this.editor = new Editor();
     this.progress_status = 'start';
   }
 
@@ -108,8 +160,20 @@ export class CourseDetailComponent implements OnInit {
     });
   }
 
+  postlist: any = [];
+  safehtmlStr: SafeHtml[] = [];
   async classpost() {
     // các bài viết của lớp
+    this.PostApiService.GetAllPostbyCourseId(this.id).subscribe(async () => {
+      this.postlist = await JSON.parse(
+        localStorage.getItem('postlist') || '{}'
+      );
+      for (let i = 0; i < this.postlist.length; i++) {
+        this.safehtmlStr[i] = this.DomSanitizer.bypassSecurityTrustHtml(
+          this.postlist[i].content
+        );
+      }
+    });
   }
 
   async classstore() {
@@ -145,5 +209,16 @@ export class CourseDetailComponent implements OnInit {
     this.UserListOpenedService.add_user_section(adduser);
     localStorage.setItem('cruserid', id.toString());
     this.Router.navigate(['./main/user/' + id]);
+  }
+
+  durationInSeconds = 5;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  openSnackBar(data: string, act: string) {
+    this._snackBar.open(data, act, {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }

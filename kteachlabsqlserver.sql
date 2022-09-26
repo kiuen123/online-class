@@ -274,7 +274,6 @@ CREATE TABLE post
   id_course int NOT NULL,
   title varchar(255) NOT NULL,
   content ntext NOT NULL,
-  ngaygio_dang datetime NOT NULL,
   create_at datetime not null,
   update_at datetime not null
 )
@@ -297,7 +296,6 @@ CREATE TABLE comment
   id_post int NOT NULL,
   id_users int NOT NULL,
   content ntext NOT NULL,
-  ngay_dang datetime NOT NULL,
   create_at datetime not null,
   update_at datetime not null
 )
@@ -370,3 +368,6 @@ exec danh_sach_course
 select * from learntime where id_course=1
 
 select * from post where id_course=1
+
+insert into post(id_tacgia,id_course,title,content,create_at,update_at)
+values (1,1,'test','content','2022/09/26','2022/09/26')

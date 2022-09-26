@@ -23145,3 +23145,806 @@ select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
 select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 exec danh_sach_course  @sql = '', @pagination =''
 exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (0,0,'string','string','string','string')
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where ten_dang_nhap = 'kiuen123' and mat_khau = 'Kien121999'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'','<p>d</p>','2022/09/26','2022/09/26')
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'ddwww','<p>dddd</p>','2022/09/26','2022/09/26')
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'123455','<p>qweqweqweqweqweqweqwe</p>','2022/09/26','2022/09/26')
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'123455','<p>qweqweqweqweqweqweqwe</p>','2022/09/26','2022/09/26')
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'123455','<p>qweqweqweqweqweqweqwe</p>','2022/09/26','2022/09/26')
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'123455333','<h4><strong>qweqweqweqweqweqweqwe</strong></h4><p><img src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2021/02/30161518/1-1024x768.png" alt="" title="" width="189px"></p>','2022/09/26','2022/09/26')
+select * from post where id_course=1
+insert into post(id_tacgia,id_course,title,content,create_at,update_at) values (1,1,'123455333','<h4 style="text-align:center"><strong>qweqweqweqweqweqweqwe</strong></h4><p><img src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2021/02/30161518/1-1024x768.png" alt="" title="" width="189px"></p>','2022/09/26','2022/09/26')
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = '', @pagination =''
+exec danh_sach_course  @sql = ' ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+select * from learntime where id_course=1
+select * from post where id_course=1
+exec danh_sach_course  @sql = ' and course.id = 1 ', @pagination =' '
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 100000000 ROWS ONLY'
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users
+select * from learntime where id_course=1
+exec danh_sach_lop @sql = ' and course.id = 1 ', @pagination =' ORDER BY course.id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'
+select * from post where id_course=1
+select id,ten,email,vai_tro,anh_dai_dien,tom_tat from users where id like '%%%' ORDER BY id OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
