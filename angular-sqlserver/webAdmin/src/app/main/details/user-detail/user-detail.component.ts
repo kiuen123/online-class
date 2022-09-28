@@ -20,6 +20,7 @@ export class UserDetailComponent implements OnInit {
             localStorage.getItem('userbyid') || '{}'
           )[0];
 
+          // hoàn thiện load thông tin
           this.progress_status = 'complete';
         });
       }

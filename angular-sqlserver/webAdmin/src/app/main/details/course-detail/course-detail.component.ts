@@ -65,12 +65,6 @@ export class CourseDetailComponent implements OnInit {
     this.Router.events.subscribe(async (event: Event) => {
       if (event instanceof NavigationEnd) {
         await this.classinfo();
-        await this.classlist();
-        await this.classpost();
-        await this.classstore();
-        await this.classtest();
-
-        this.progress_status = 'complete';
       }
     });
   }
@@ -92,6 +86,7 @@ export class CourseDetailComponent implements OnInit {
   post: Post = {
     title: '',
   };
+
   addcontent() {
     this.post.id_tacgia = this.cruser[0].id;
     this.post.id_course = this.id;
@@ -123,22 +118,27 @@ export class CourseDetailComponent implements OnInit {
   async classinfo() {
     // thông tin lớp
     this.id = JSON.parse(localStorage.getItem('crcourseid') || '0');
+    // lấy thông tin lớp theo id
     await this.CourseApiService.getCourseById(this.id).subscribe(async () => {
       this.course_detail = await JSON.parse(
         localStorage.getItem('coursebyid') || '{}'
       );
+      // lấy giờ học của lớp
+      await this.CourseApiService.getCourseLearnTime(this.id).subscribe(
+        async () => {
+          this.learntime = await JSON.parse(
+            localStorage.getItem('courselearntime') || '{}'
+          );
+          // lấy danh sách lớp
+          await this.classlist();
+        }
+      );
     });
-    await this.CourseApiService.getCourseLearnTime(this.id).subscribe(
-      async () => {
-        this.learntime = await JSON.parse(
-          localStorage.getItem('courselearntime') || '{}'
-        );
-      }
-    );
   }
 
   async classlist() {
     // danh sách lớp
+    // lấy số học sinh trong lớp
     await this.CourseApiService.getcourseuser(
       this.id,
       this.curentPage,
@@ -147,16 +147,20 @@ export class CourseDetailComponent implements OnInit {
       this.pagelength = await JSON.parse(
         localStorage.getItem('courseuserlist') || '{}'
       ).length;
-    });
-    await this.CourseApiService.getcourseuser(
-      this.id,
-      this.curentPage,
-      this.pageSize
-    ).subscribe(async () => {
-      this.coursepage = await JSON.parse(
-        localStorage.getItem('courseuserlist') || '{}'
-      );
-      this.dataSource = this.coursepage;
+      // lấy danh sách học sinh trong lớp
+      await this.CourseApiService.getcourseuser(
+        this.id,
+        this.curentPage,
+        this.pageSize
+      ).subscribe(async () => {
+        this.coursepage = await JSON.parse(
+          localStorage.getItem('courseuserlist') || '{}'
+        );
+        // gán dữ liệu vào bảng
+        this.dataSource = this.coursepage;
+        // lấy danh sách bài viết của lớp
+        await this.classpost();
+      });
     });
   }
 
@@ -164,24 +168,36 @@ export class CourseDetailComponent implements OnInit {
   safehtmlStr: SafeHtml[] = [];
   async classpost() {
     // các bài viết của lớp
+    // lấy danh sách bài viết của lớp
     this.PostApiService.GetAllPostbyCourseId(this.id).subscribe(async () => {
       this.postlist = await JSON.parse(
         localStorage.getItem('postlist') || '{}'
       );
+      // gán content thành safehtml string
       for (let i = 0; i < this.postlist.length; i++) {
         this.safehtmlStr[i] = this.DomSanitizer.bypassSecurityTrustHtml(
           this.postlist[i].content
         );
       }
+      // lấy danh sách tài liệu của lớp
+      await this.classstore();
     });
   }
 
   async classstore() {
     // các tài kiệu của lớp
+    console.log('store');
+
+    // lấy danh sách bài kiểm tra
+    await this.classtest();
   }
 
   async classtest() {
     // các bài kiểm tra của lớp
+    console.log('test');
+
+    // hoàn thiện load trang
+    this.progress_status = 'complete';
   }
 
   dateformat(date: string): string {

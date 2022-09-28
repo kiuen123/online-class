@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         // không đăng nhập được
         this.openSnackBar('Tên đăng nhập hoặc mật khẩu không đúng', 'Đóng');
       } else {
-        // đăng nhạp thành công
+        // đăng nhập thành công
         this.router.navigate(['/main']);
       }
     });

@@ -41,3 +41,8 @@ table img {
 .NgxEditor__Wrapper {
   min-height: 250px;
 }
+.post-action {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
